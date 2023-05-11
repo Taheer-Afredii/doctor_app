@@ -21,6 +21,8 @@ class AddProfileScreenViewModel extends ChangeNotifier {
     "8 Year",
     "9 Year",
     "10 Year"
+    "11 Year"
+    "12 Year"
   ];
 
   getGenderDropDownVal(val) {
