@@ -1,0 +1,60 @@
+name: doctorq
+description: A new Flutter project.
+version: 1.0.0+1
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+dependencies:
+  accordion: ^2.5.1
+  collection: ^1.17.0
+  animate_do: ^3.0.2
+  cached_network_image: ^3.2.1
+  carousel_slider: ^4.0.0
+  # date_picker_timeline: ^1.2.3
+  # easy_localization: any
+  flutter:
+    sdk: flutter
+  flutter_launcher_icons: ^0.12.0
+  flutter_rating_bar: ^4.0.1
+  flutter_spinkit: ^5.1.0
+  flutter_svg: ^2.0.4
+  flutter_switch: ^0.3.2
+  google_sign_in: ^6.1.0
+  http: ^0.13.3
+  image_picker: ^0.8.7+1
+  outline_gradient_button: ^2.0.0+1
+  pin_code_fields: ^7.3.0
+  share_plus: ^6.3.1
+  smooth_page_indicator: ^1.0.0+2
+  flutter_screenutil: ^5.7.0
+  get: ^4.6.5
+  google_fonts: ^4.0.3
+  intl: ^0.18.0
+  lottie: ^2.3.2
+  path_provider: ^2.0.14
+  persistent_bottom_nav_bar: ^5.0.2
+  provider: ^6.0.5
+  shared_preferences: ^2.1.0
+  smooth_star_rating_null_safety: ^1.0.4+2
+  table_calendar: ^3.0.9
+dev_dependencies:
+  flutter_lints: ^2.0.1
+  flutter_test:
+    sdk: flutter
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/Logo.png"
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/images/
+    - assets/translations/
+    - assets/icons/
+  fonts:
+    - family: Source Sans Pro
+      fonts:
+        - asset: assets/fonts/SourceSansProSemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/SourceSansProRegular.ttf
+          weight: 400
