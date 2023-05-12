@@ -1,14 +1,14 @@
+import 'package:doctorq/View/TestEnumFile.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
 import 'package:doctorq/core/app_export.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_step_2_filled_screen/light_appointments_step_2_filled_screen.dart';
 import 'package:doctorq/View/PatientSideApp/light_appointments_success_messaging_dialog/light_appointments_success_messaging_dialog.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
 class LightAppointmentsFailedMessagingDialog extends StatelessWidget {
-  ContactMethods contactMethod;
-  LightAppointmentsFailedMessagingDialog({required this.contactMethod});
+  CallType callTypes;
+  LightAppointmentsFailedMessagingDialog({required this.callTypes});
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
@@ -35,9 +35,9 @@ class LightAppointmentsFailedMessagingDialog extends StatelessWidget {
                 right: 24,
               ),
               child: CommonImageView(
-                imagePath: contactMethod == ContactMethods.message
+                imagePath: callTypes == CallType.message
                     ? ImageConstant.failedMessage
-                    : contactMethod == ContactMethods.voiceCall
+                    : callTypes == CallType.voiceCall
                         ? ImageConstant.failedCall
                         : ImageConstant.failedVideo,
                 height: getVerticalSize(
@@ -107,7 +107,7 @@ class LightAppointmentsFailedMessagingDialog extends StatelessWidget {
                   context: context,
                   builder: (context) {
                     return LightAppointmentsSuccessMessagingDialog(
-                      contactMethod: contactMethod,
+                      callTypes: callTypes,
                     );
                   },
                 );

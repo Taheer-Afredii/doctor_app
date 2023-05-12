@@ -1,4 +1,4 @@
-import 'package:doctorq/View/PatientSideApp/light_appointments_step_2_filled_screen/light_appointments_step_2_filled_screen.dart';
+import 'package:doctorq/View/TestEnumFile.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
 import 'package:doctorq/core/app_export.dart';
@@ -11,9 +11,9 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class LightAppointmentsListMessagingEndedScreen extends StatelessWidget {
   AppointmentsModel appointment;
-  ContactMethods contactMethod;
+  CallType callTypes;
   LightAppointmentsListMessagingEndedScreen(
-      {required this.appointment, required this.contactMethod});
+      {required this.appointment, required this.callTypes});
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
@@ -34,9 +34,9 @@ class LightAppointmentsListMessagingEndedScreen extends StatelessWidget {
                     right: 24,
                   ),
                   child: Text(
-                    contactMethod == ContactMethods.message
+                    callTypes == CallType.message
                         ? 'Messaging ended'
-                        : contactMethod == ContactMethods.voiceCall
+                        : callTypes == CallType.voiceCall
                             ? 'VoiceCall ended'
                             : 'Video call ended',
                     overflow: TextOverflow.ellipsis,
@@ -149,7 +149,7 @@ class LightAppointmentsListMessagingEndedScreen extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) =>
                               LightAppointmentsListWriteReviewFilledScreen(
-                                contactMethod: contactMethod,
+                                callTypes: callTypes,
                                 appointment: appointment,
                               )),
                     );

@@ -1,4 +1,5 @@
-import 'package:doctorq/View/PatientSideApp/light_appointments_step_3_filled_screen/light_appointments_step_3_filled_screen.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_step_3_filled_screen/light_appointments_step_3_filled_screen.dart';
+import 'package:doctorq/View/TestEnumFile.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
@@ -14,13 +15,11 @@ class LightAppointmentsStep2FilledScreen extends StatefulWidget {
       _LightAppointmentsStep2FilledScreenState();
 }
 
-enum ContactMethods { message, voiceCall, videoCall }
-
 class _LightAppointmentsStep2FilledScreenState
     extends State<LightAppointmentsStep2FilledScreen> {
   bool isMorning = true;
   int selectedTime = 0;
-  ContactMethods? contactMethod;
+  CallType? callTypes;
 
   List<String> availableTimesList = [
     '9:00 AM',
@@ -310,7 +309,7 @@ class _LightAppointmentsStep2FilledScreenState
                     // InkWell(
                     //   onTap: () {
                     //     setState(() {
-                    //       contactMethod = ContactMethods.message;
+                    //       callTypes = CallType.message;
                     //     });
                     //   },
                     //   child: Container(
@@ -329,7 +328,7 @@ class _LightAppointmentsStep2FilledScreenState
                     //         ),
                     //       ),
                     //       border: Border.all(
-                    //           color: contactMethod == ContactMethods.message
+                    //           color: callTypes == CallType.message
                     //               ? Colors.transparent
                     //               : ColorConstant.lightLine),
                     //       gradient: LinearGradient(
@@ -341,7 +340,7 @@ class _LightAppointmentsStep2FilledScreenState
                     //           0,
                     //           0.0024292469024658203,
                     //         ),
-                    //         colors: contactMethod == ContactMethods.message
+                    //         colors: callTypes == CallType.message
                     //             ? [
                     //                 ColorConstant.blueA400,
                     //                 ColorConstant.blue300,
@@ -363,7 +362,7 @@ class _LightAppointmentsStep2FilledScreenState
                     //               height: 56,
                     //               width: 56,
                     //               variant:
-                    //                   contactMethod == ContactMethods.message
+                    //                   callTypes == CallType.message
                     //                       ? IconButtonVariant.FillWhiteA700
                     //                       : IconButtonVariant.FillBlueA40019,
                     //               shape: IconButtonShape.RoundedBorder28,
@@ -383,8 +382,8 @@ class _LightAppointmentsStep2FilledScreenState
                     //                   overflow: TextOverflow.ellipsis,
                     //                   textAlign: TextAlign.start,
                     //                   style: TextStyle(
-                    //                     color: contactMethod ==
-                    //                             ContactMethods.message
+                    //                     color: callTypes ==
+                    //                             CallType.message
                     //                         ? ColorConstant.whiteA700
                     //                         : isDark
                     //                             ? Colors.white
@@ -405,8 +404,8 @@ class _LightAppointmentsStep2FilledScreenState
                     //                     overflow: TextOverflow.ellipsis,
                     //                     textAlign: TextAlign.start,
                     //                     style: TextStyle(
-                    //                       color: contactMethod ==
-                    //                               ContactMethods.message
+                    //                       color: callTypes ==
+                    //                               CallType.message
                     //                           ? ColorConstant.whiteA700
                     //                           : isDark
                     //                               ? Colors.white
@@ -428,7 +427,7 @@ class _LightAppointmentsStep2FilledScreenState
                     //           overflow: TextOverflow.ellipsis,
                     //           textAlign: TextAlign.start,
                     //           style: TextStyle(
-                    //             color: contactMethod == ContactMethods.message
+                    //             color: callTypes == CallType.message
                     //                 ? ColorConstant.whiteA700
                     //                 : ColorConstant.blueA400,
                     //             fontSize: getFontSize(
@@ -446,7 +445,7 @@ class _LightAppointmentsStep2FilledScreenState
                     InkWell(
                       onTap: () {
                         setState(() {
-                          contactMethod = ContactMethods.voiceCall;
+                          callTypes = CallType.voiceCall;
                         });
                       },
                       child: Container(
@@ -459,7 +458,7 @@ class _LightAppointmentsStep2FilledScreenState
                         padding: getPadding(
                             left: 20, right: 20, top: 16, bottom: 16),
                         decoration: BoxDecoration(
-                          color: contactMethod == ContactMethods.voiceCall
+                          color: callTypes == CallType.voiceCall
                               ? Color(0xffB2E2FF)
                               : Colors.transparent,
                           borderRadius: BorderRadius.circular(
@@ -468,13 +467,13 @@ class _LightAppointmentsStep2FilledScreenState
                             ),
                           ),
                           border: Border.all(
-                              color: contactMethod == ContactMethods.voiceCall
+                              color: callTypes == CallType.voiceCall
                                   ? Colors.transparent
                                   : ColorConstant.lightLine),
                           // gradient: LinearGradient(
                           //   begin: Alignment.topCenter,
                           //   end: Alignment.bottomCenter,
-                          //   colors: contactMethod == ContactMethods.voiceCall
+                          //   colors: callTypes == CallType.voiceCall
                           //       ? [
                           //           Color(0xffEBEEF2),
                           //           Color(0xffB2E2FF),
@@ -531,8 +530,7 @@ class _LightAppointmentsStep2FilledScreenState
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.start,
                                         style: TextStyle(
-                                          color: contactMethod ==
-                                                  ContactMethods.voiceCall
+                                          color: callTypes == CallType.voiceCall
                                               ? ColorConstant.gray90099
                                               : isDark
                                                   ? Colors.white
@@ -570,7 +568,7 @@ class _LightAppointmentsStep2FilledScreenState
                     InkWell(
                       onTap: () {
                         setState(() {
-                          contactMethod = ContactMethods.videoCall;
+                          callTypes = CallType.videoCall;
                         });
                       },
                       child: Container(
@@ -583,7 +581,7 @@ class _LightAppointmentsStep2FilledScreenState
                         padding: getPadding(
                             left: 20, right: 20, top: 16, bottom: 16),
                         decoration: BoxDecoration(
-                          color: contactMethod == ContactMethods.videoCall
+                          color: callTypes == CallType.videoCall
                               ? Color(0xffB2E2FF)
                               : Colors.transparent,
                           borderRadius: BorderRadius.circular(
@@ -592,7 +590,7 @@ class _LightAppointmentsStep2FilledScreenState
                             ),
                           ),
                           border: Border.all(
-                              color: contactMethod == ContactMethods.videoCall
+                              color: callTypes == CallType.videoCall
                                   ? Colors.transparent
                                   : ColorConstant.lightLine),
                           // gradient: LinearGradient(
@@ -604,7 +602,7 @@ class _LightAppointmentsStep2FilledScreenState
                           //     0,
                           //     0.0024292469024658203,
                           //   ),
-                          //   colors: contactMethod == ContactMethods.videoCall
+                          //   colors: callTypes == CallType.videoCall
                           //       ? [
                           //           ColorConstant.blueA400,
                           //           ColorConstant.blue300,
@@ -644,8 +642,8 @@ class _LightAppointmentsStep2FilledScreenState
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
-                                        // color: contactMethod ==
-                                        //         ContactMethods.videoCall
+                                        // color: callTypes ==
+                                        //         CallType.videoCall
                                         //     ? ColorConstant.whiteA700
                                         //     : isDark
                                         //         ? Colors.white
@@ -666,8 +664,7 @@ class _LightAppointmentsStep2FilledScreenState
                                         overflow: TextOverflow.ellipsis,
                                         textAlign: TextAlign.start,
                                         style: TextStyle(
-                                          color: contactMethod ==
-                                                  ContactMethods.videoCall
+                                          color: callTypes == CallType.videoCall
                                               ? ColorConstant.gray900A2
                                               : isDark
                                                   ? Colors.white
@@ -721,7 +718,7 @@ class _LightAppointmentsStep2FilledScreenState
                           MaterialPageRoute(
                               builder: (context) =>
                                   LightAppointmentsStep3FilledScreen(
-                                    contactMethod: contactMethod!,
+                                    callTypes: callTypes!,
                                   )),
                         );
                       },

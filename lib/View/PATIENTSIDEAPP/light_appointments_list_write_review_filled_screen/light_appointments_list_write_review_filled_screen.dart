@@ -1,3 +1,4 @@
+import 'package:doctorq/View/TestEnumFile.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
@@ -8,16 +9,15 @@ import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/models/appointments_model.dart';
 import 'package:doctorq/View/PatientSideApp/home.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_step_2_filled_screen/light_appointments_step_2_filled_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 // ignore: must_be_immutable
 class LightAppointmentsListWriteReviewFilledScreen extends StatefulWidget {
-  ContactMethods contactMethod;
+  CallType callTypes;
   AppointmentsModel appointment;
   LightAppointmentsListWriteReviewFilledScreen(
-      {required this.contactMethod, required this.appointment});
+      {required this.callTypes, required this.appointment});
 
   @override
   State<LightAppointmentsListWriteReviewFilledScreen> createState() =>

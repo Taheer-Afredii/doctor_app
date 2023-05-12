@@ -1,3 +1,7 @@
+import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_step_2_filled_screen/light_appointments_step_2_filled_screen.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_success_video_call_dialog/light_appointments_success_video_call_dialog.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_success_voice_call_dialog/light_appointments_success_voice_call_dialog.dart';
+import 'package:doctorq/View/TestEnumFile.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/Widget/Patientwidgets/boxshadow.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
@@ -5,16 +9,13 @@ import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_text_form_field.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/app_export.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_step_2_filled_screen/light_appointments_step_2_filled_screen.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_success_video_call_dialog/light_appointments_success_video_call_dialog.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_success_voice_call_dialog/light_appointments_success_voice_call_dialog.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class LightAppointmentsStep4FilledScreen extends StatelessWidget {
-  ContactMethods contactMethod;
-  LightAppointmentsStep4FilledScreen({required this.contactMethod});
+  CallType callTypes;
+  LightAppointmentsStep4FilledScreen({required this.callTypes});
   TextEditingController autoLayoutHorOneController = TextEditingController();
 
   TextEditingController autoLayoutHorTwoController = TextEditingController();
@@ -897,12 +898,12 @@ class LightAppointmentsStep4FilledScreen extends StatelessWidget {
                         barrierDismissible: false,
                         context: context,
                         builder: (context) {
-                          return contactMethod == ContactMethods.videoCall
+                          return callTypes == CallType.videoCall
                               ? LightAppointmentsSuccessVideoCallDialog(
-                                  contactMethod: contactMethod,
+                                  callTypes: callTypes,
                                 )
                               : LightAppointmentsSuccessVoiceCallDialog(
-                                  contactMethod: contactMethod);
+                                  callTypes: callTypes);
                           // return LightAppointmentsSuccessMessagingDialog(
                           //   contactMethod: contactMethod,
                           // );

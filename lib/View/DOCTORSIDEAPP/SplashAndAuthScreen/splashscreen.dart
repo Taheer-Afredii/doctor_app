@@ -1,5 +1,6 @@
 import 'package:doctorq/View/DOCTORSIDEAPP/SplashAndAuthScreen/authselection.dart';
 import 'package:doctorq/core/constants/assets.dart';
+import 'package:doctorq/core/utils/image_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

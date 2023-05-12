@@ -1,7 +1,7 @@
-import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_step_2_filled_screen/light_appointments_step_2_filled_screen.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/light_history_messaging_page/light_history_messaging_page.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/light_history_video_call_page/light_history_video_call_page.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/light_history_voice_call_page/light_history_voice_call_page.dart';
+import 'package:doctorq/View/TestEnumFile.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
@@ -15,7 +15,8 @@ class HistoryScreen extends StatefulWidget {
 }
 
 class _HistoryScreenState extends State<HistoryScreen> {
-  ContactMethods contactMethod = ContactMethods.voiceCall;
+  CallType calltypes = CallType.voiceCall;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -142,13 +143,13 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       child: InkWell(
                         onTap: () {
                           setState(() {
-                            contactMethod = ContactMethods.voiceCall;
+                            calltypes = CallType.voiceCall;
                           });
                         },
                         child: Container(
                           padding: getPadding(top: 8, bottom: 8),
                           decoration: BoxDecoration(
-                            color: contactMethod == ContactMethods.voiceCall
+                            color: calltypes == CallType.voiceCall
                                 ? ColorConstant.blueA400
                                 : Colors.transparent,
                             borderRadius: BorderRadius.circular(
@@ -173,8 +174,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                     fontFamily: 'Source Sans Pro',
                                     fontSize: getFontSize(18),
                                     fontWeight: FontWeight.w600,
-                                    color: contactMethod ==
-                                            ContactMethods.voiceCall
+                                    color: calltypes == CallType.voiceCall
                                         ? Colors.white
                                         : ColorConstant.blueA400),
                               ),
@@ -188,13 +188,13 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       child: InkWell(
                         onTap: () {
                           setState(() {
-                            contactMethod = ContactMethods.videoCall;
+                            calltypes = CallType.videoCall;
                           });
                         },
                         child: Container(
                           padding: getPadding(top: 8, bottom: 8),
                           decoration: BoxDecoration(
-                            color: contactMethod == ContactMethods.videoCall
+                            color: calltypes == CallType.videoCall
                                 ? ColorConstant.blueA400
                                 : Colors.transparent,
                             borderRadius: BorderRadius.circular(
@@ -219,8 +219,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                                     fontFamily: 'Source Sans Pro',
                                     fontSize: getFontSize(18),
                                     fontWeight: FontWeight.w600,
-                                    color: contactMethod ==
-                                            ContactMethods.videoCall
+                                    color: calltypes == CallType.videoCall
                                         ? Colors.white
                                         : ColorConstant.blueA400),
                               ),
@@ -234,9 +233,9 @@ class _HistoryScreenState extends State<HistoryScreen> {
             VerticalSpace(height: 24),
             Expanded(
               child: SingleChildScrollView(
-                child: contactMethod == ContactMethods.message
+                child: calltypes == CallType.message
                     ? LightHistoryMessagingPage()
-                    : contactMethod == ContactMethods.voiceCall
+                    : calltypes == CallType.voiceCall
                         ? LightHistoryVoiceCallPage()
                         : LightHistoryVideoCallPage(),
               ),

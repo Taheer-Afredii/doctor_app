@@ -1,5 +1,5 @@
-import 'package:doctorq/View/PatientSideApp/light_appointments_step_2_filled_screen/light_appointments_step_2_filled_screen.dart';
 import 'package:doctorq/View/PatientSideApp/light_appointments_step_4_filled_screen/light_appointments_step_4_filled_screen.dart';
+import 'package:doctorq/View/TestEnumFile.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/Widget/Patientwidgets/boxshadow.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
@@ -13,8 +13,8 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class LightAppointmentsStep3FilledScreen extends StatefulWidget {
-  ContactMethods contactMethod;
-  LightAppointmentsStep3FilledScreen({required this.contactMethod});
+  CallType callTypes;
+  LightAppointmentsStep3FilledScreen({required this.callTypes});
 
   @override
   State<LightAppointmentsStep3FilledScreen> createState() =>
@@ -672,7 +672,7 @@ class _LightAppointmentsStep3FilledScreenState
                     MaterialPageRoute(
                         builder: (context) =>
                             LightAppointmentsStep4FilledScreen(
-                              contactMethod: widget.contactMethod,
+                              callTypes: widget.callTypes,
                             )),
                   );
                 },

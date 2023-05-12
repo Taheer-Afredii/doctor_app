@@ -1,3 +1,4 @@
+import 'package:doctorq/View/TestEnumFile.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
@@ -5,7 +6,6 @@ import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/models/appointments_model.dart';
 import 'package:doctorq/View/PatientSideApp/light_appointments_list_video_call_ringing_screen/light_appointments_list_video_call_ringing_screen.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_step_2_filled_screen/light_appointments_step_2_filled_screen.dart';
 
 import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_icon_button.dart';
@@ -833,7 +833,7 @@ class LightAppointmentsListVideoCallScreen extends StatelessWidget {
                               builder: (context) =>
                                   LightAppointmentsListVideoCallRingingScreen(
                                     appointment: appointment,
-                                    contactMethod: ContactMethods.videoCall,
+                                    callTypes: CallType.videoCall,
                                   )),
                         );
                       },

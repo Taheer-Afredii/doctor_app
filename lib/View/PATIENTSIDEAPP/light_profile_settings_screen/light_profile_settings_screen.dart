@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:doctorq/View/DOCTORSIDEAPP/AddProfileScreen/addprofile_screen.dart';
 import 'package:doctorq/View/PatientSideApp/light_profile_settings_help_screen/light_profile_settings_help_screen.dart';
 import 'package:doctorq/View/PatientSideApp/light_profile_settings_invite_friends_screen/light_profile_settings_invite_friends_screen.dart';
 import 'package:doctorq/View/PatientSideApp/light_profile_settings_logout_modal_bottomsheet/light_profile_settings_logout_modal_bottomsheet.dart';
@@ -6,10 +7,13 @@ import 'package:doctorq/View/PatientSideApp/light_profile_settings_notification_
 import 'package:doctorq/View/PatientSideApp/update_profile.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
+import 'package:doctorq/Widget/doctor_widget/appbutton.dart';
 import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_icon_button.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class LightProfileSettingsScreen extends StatelessWidget {
   @override
@@ -728,6 +732,15 @@ class LightProfileSettingsScreen extends StatelessWidget {
                               ),
                             ),
                           ],
+                        ),
+                      ),
+                      SizedBox(height: 100.h),
+                      Center(
+                        child: AppSwitchButton(
+                          text: "Switch To Doctor Side",
+                          onPressed: () {
+                            Get.offAll(AddProfileScreen());
+                          },
                         ),
                       ),
                     ],

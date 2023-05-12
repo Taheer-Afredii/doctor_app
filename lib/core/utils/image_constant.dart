@@ -1,3 +1,22 @@
+const String staticImagePath = "assets/images";
+const String staticServicesImagePath = "assets/images/servicesListImages";
+const String staticIconPath = "assets/icons";
+const String animation = "assets/animation";
+
+//icons
+
+const String logo = "$staticIconPath/logoholhealth.png";
+const String google = "$staticIconPath/google.png";
+const String facebook = "$staticIconPath/facebook.png";
+const String swapIcon = "$staticIconPath/swap.png";
+
+//images
+
+const String profile = "$staticImagePath/profile.png";
+const sickPatient = "$staticImagePath/sickpatient.png";
+const youngDoctor = "$staticImagePath/youngdoctor.png";
+const homeCard = "$staticImagePath/Card.png";
+
 class ImageConstant {
   static String appLogo = 'assets/images/holhealth.png';
 
@@ -241,7 +260,14 @@ class ImageConstant {
 
   static String imgLocation = 'assets/images/img_location.svg';
 
-  static String specialist1 = 'assets/images/img_location.svg';
+  static String specialist1 = 'assets/images/img_location.png';
+  static String specialistpng1 = 'assets/images/speciaList1.png';
+  static String specialistpng2 = 'assets/images/speciaList2.png';
+  static String specialistpng3 = 'assets/images/speciaList3.png';
+  static String specialistpng4 = 'assets/images/speciaList4.png';
+  static String specialistpng5 = 'assets/images/speciaList5.png';
+  static String specialistpng6 = 'assets/images/speciaList6.png';
+  static String specialistpng7 = 'assets/images/speciaList7.png';
 
   static String specialist2 = 'assets/images/specialist2.svg';
 

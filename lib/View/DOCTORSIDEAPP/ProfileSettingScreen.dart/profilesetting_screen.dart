@@ -189,7 +189,7 @@ class ProfileSettingScreen extends StatelessWidget {
                 SizedBox(height: 50.h),
                 Center(
                   child: AppSwitchButton(
-                    text: "Switch To Doctor Side",
+                    text: "Switch To Patient Side",
                     onPressed: () {
                       Get.offAll(Home());
                     },

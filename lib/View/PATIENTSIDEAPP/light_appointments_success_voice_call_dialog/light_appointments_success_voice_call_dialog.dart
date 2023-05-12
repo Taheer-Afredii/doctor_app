@@ -1,15 +1,15 @@
+import 'package:doctorq/View/PATIENTSIDEAPP/home.dart';
+import 'package:doctorq/View/TestEnumFile.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
 import 'package:doctorq/core/app_export.dart';
-import 'package:doctorq/View/PatientSideApp/home.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_step_2_filled_screen/light_appointments_step_2_filled_screen.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
 // ignore_for_file: must_be_immutable
 class LightAppointmentsSuccessVoiceCallDialog extends StatelessWidget {
-  ContactMethods contactMethod;
-  LightAppointmentsSuccessVoiceCallDialog({required this.contactMethod});
+  CallType callTypes;
+  LightAppointmentsSuccessVoiceCallDialog({required this.callTypes});
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
@@ -37,9 +37,9 @@ class LightAppointmentsSuccessVoiceCallDialog extends StatelessWidget {
                 right: 24,
               ),
               child: CommonImageView(
-                imagePath: contactMethod == ContactMethods.message
+                imagePath: callTypes == CallType.message
                     ? ImageConstant.successMessage
-                    : contactMethod == ContactMethods.voiceCall
+                    : callTypes == CallType.voiceCall
                         ? ImageConstant.successCall
                         : ImageConstant.successVideo,
                 height: getVerticalSize(
