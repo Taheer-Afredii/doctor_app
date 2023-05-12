@@ -261,13 +261,15 @@ class ImageConstant {
   static String imgLocation = 'assets/images/img_location.svg';
 
   static String specialist1 = 'assets/images/img_location.png';
-  static String specialistpng1 = 'assets/images/speciaList1.png';
-  static String specialistpng2 = 'assets/images/speciaList2.png';
-  static String specialistpng3 = 'assets/images/speciaList3.png';
-  static String specialistpng4 = 'assets/images/speciaList4.png';
-  static String specialistpng5 = 'assets/images/speciaList5.png';
-  static String specialistpng6 = 'assets/images/speciaList6.png';
-  static String specialistpng7 = 'assets/images/speciaList7.png';
+
+  static String specialistpng1 = 'assets/images/specialList1.png';
+
+  static String specialistpng2 = 'assets/images/specialList2.png';
+  static String specialistpng3 = 'assets/images/specialList3.png';
+  static String specialistpng4 = 'assets/images/specialList4.png';
+  static String specialistpng5 = 'assets/images/specialList5.png';
+  static String specialistpng6 = 'assets/images/specialList6.png';
+  static String specialistpng7 = 'assets/images/specialList7.png';
 
   static String specialist2 = 'assets/images/specialist2.svg';
 
