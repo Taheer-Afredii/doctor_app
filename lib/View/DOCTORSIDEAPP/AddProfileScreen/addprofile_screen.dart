@@ -3,8 +3,8 @@ import 'package:doctorq/View/DOCTORSIDEAPP/DateAndTimeSelection/dateandtimeselec
 import 'package:doctorq/Widget/doctor_widget/appbutton.dart';
 import 'package:doctorq/Widget/doctor_widget/apptextfieldwidget.dart';
 import 'package:doctorq/Widget/doctor_widget/custom_dropdown.dart';
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -78,7 +78,7 @@ class AddProfileScreen extends StatelessWidget {
                 text: "Gender",
               ),
               SizedBox(height: 8.h),
-              CustomDropDown(
+              AppCustomDropDown(
                 value: model.genderDropDownVal,
                 hintText: "Gender",
                 // focusNode: FocusNode(),
@@ -92,7 +92,7 @@ class AddProfileScreen extends StatelessWidget {
                 text: "Specification",
               ),
               SizedBox(height: 8.h),
-              CustomDropDown(
+              AppCustomDropDown(
                 value: model.specDropDownVal,
                 hintText: "Specification",
                 // focusNode: FocusNode(),
@@ -106,7 +106,7 @@ class AddProfileScreen extends StatelessWidget {
                 text: "Experience",
               ),
               SizedBox(height: 8.h),
-              CustomDropDown(
+              AppCustomDropDown(
                 value: model.expDropDownVal,
                 hintText: "Experience",
                 // focusNode: FocusNode(),
@@ -252,7 +252,7 @@ class DOBContainer extends StatelessWidget {
     AddProfileScreenViewModel model =
         Provider.of<AddProfileScreenViewModel>(context);
     return Container(
-      height: 60.h,
+      height: 55.h,
       padding: EdgeInsets.symmetric(horizontal: 16.w),
       decoration: BoxDecoration(
         color: ColorConstant.whiteA700,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CheckBoxWidget extends StatelessWidget {
-  bool value;
-  void Function(bool?) onChanged;
+  final bool value;
+  final void Function(bool?) onChanged;
   CheckBoxWidget({
     required this.value,
     required this.onChanged,

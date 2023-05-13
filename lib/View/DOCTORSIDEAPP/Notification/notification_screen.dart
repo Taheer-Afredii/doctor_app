@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:doctorq/Widget/doctor_widget/appheading_row.dart';
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:doctorq/core/utils/formated_date.dart';
 import 'package:doctorq/models/notification_model.dart';
 import 'package:flutter/material.dart';

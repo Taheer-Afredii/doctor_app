@@ -2,9 +2,8 @@ import 'package:doctorq/View/DOCTORSIDEAPP/AppointmentScreen/AppointmentTabs/pas
 import 'package:doctorq/View/DOCTORSIDEAPP/AppointmentScreen/AppointmentTabs/upcomingtab.dart';
 import 'package:doctorq/View/DOCTORSIDEAPP/AppointmentScreen/appointment_viewmodel.dart';
 import 'package:doctorq/Widget/doctor_widget/tabbar_container.dart';
-import 'package:doctorq/core/constants/assets.dart';
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:doctorq/core/utils/image_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -60,7 +59,6 @@ class AppointmentScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 28.h),
               kText(text: "Appointments", fontSize: 26.sp),
               SizedBox(height: 28.h),
               SizedBox(

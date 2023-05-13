@@ -4,8 +4,8 @@ import 'package:doctorq/View/DOCTORSIDEAPP/DateAndTimeSelection/dateandtimeselec
 import 'package:doctorq/View/DOCTORSIDEAPP/SetPricingScreen/set_pricing_screen.dart';
 import 'package:doctorq/Widget/doctor_widget/appbutton.dart';
 import 'package:doctorq/Widget/doctor_widget/appheading_row.dart';
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -148,7 +148,7 @@ class _DateAndTimeSelectionScreenState
                 ),
               ],
             ),
-            SizedBox(height: 72.h),
+            Spacer(),
             AppButton(
               text: "Confirm",
               onPressed: () {
@@ -160,6 +160,7 @@ class _DateAndTimeSelectionScreenState
                 );
               },
             ),
+            SizedBox(height: 48.h),
           ],
         ),
       )),
@@ -168,10 +169,10 @@ class _DateAndTimeSelectionScreenState
 }
 
 class DaySelectionContainer extends StatelessWidget {
-  String text1;
-  int index;
+  final String text1;
+  final int index;
 
-  VoidCallback onPressed;
+  final VoidCallback onPressed;
   DaySelectionContainer({
     super.key,
     required this.text1,
@@ -192,9 +193,7 @@ class DaySelectionContainer extends StatelessWidget {
         decoration: BoxDecoration(
           color: index == model.dayIndex ? blueColor : Colors.white,
           borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(
-            color: blueColor,
-          ),
+          border: Border.all(color: blueColor, width: 2.w),
         ),
         child: Center(
             child: kText(
@@ -225,9 +224,7 @@ class HourSelectionContainer extends StatelessWidget {
       height: 43.h,
       decoration: BoxDecoration(
         color: color,
-        border: Border.all(
-          color: blueColor,
-        ),
+        border: Border.all(color: blueColor, width: 2.w),
         borderRadius: BorderRadius.circular(24.r),
       ),
       child: Center(
@@ -254,9 +251,7 @@ class MorningEveningContainer extends StatelessWidget {
         height: 43.h,
         decoration: BoxDecoration(
           color: model.timeofDay == text ? blueColor : Colors.white,
-          border: Border.all(
-            color: blueColor,
-          ),
+          border: Border.all(color: blueColor, width: 2.w),
           borderRadius: BorderRadius.all(
             Radius.circular(24.r),
           ),

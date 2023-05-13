@@ -24,12 +24,12 @@ class AppearanceSettingScreen extends StatelessWidget {
             AppHeadingRow(
               text: "Appearance",
             ),
-            SizedBox(height: 24.h),
+            SizedBox(height: 32.h),
             CommonSwitchButton(
               text: "Dark Mode",
               value: themeManager.themeMode == ThemeMode.dark,
               onChanged: (value) {
-                themeManager.toggleTheme(value);
+                // themeManager.toggleTheme(value);
               },
             ),
             SizedBox(height: 24.h),

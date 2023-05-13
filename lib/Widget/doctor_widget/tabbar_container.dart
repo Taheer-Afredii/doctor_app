@@ -1,5 +1,5 @@
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

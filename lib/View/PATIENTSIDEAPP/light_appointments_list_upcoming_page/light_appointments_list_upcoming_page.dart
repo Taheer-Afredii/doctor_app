@@ -44,6 +44,7 @@ class LightAppointmentsListUpcomingPage extends StatelessWidget {
                       isDark: isDark,
                       width: 324,
                       controller: autoLayoutVerController,
+                      focusNode: FocusNode(canRequestFocus: false),
                       hintText: "Search",
                       suffix: Padding(
                           padding: EdgeInsets.only(

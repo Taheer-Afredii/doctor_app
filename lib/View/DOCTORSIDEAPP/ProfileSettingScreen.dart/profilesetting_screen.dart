@@ -7,8 +7,8 @@ import 'package:doctorq/View/DOCTORSIDEAPP/ProfileSettingScreen.dart/profile_set
 import 'package:doctorq/View/DOCTORSIDEAPP/ProfileSettingScreen.dart/profilesettingscreen_viewmodel.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/home.dart';
 import 'package:doctorq/Widget/doctor_widget/appbutton.dart';
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

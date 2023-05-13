@@ -1,7 +1,7 @@
 import 'package:doctorq/Widget/doctor_widget/appbutton.dart';
 import 'package:doctorq/Widget/doctor_widget/appheading_row.dart';
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:doctorq/models/invite_friend_local_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +17,7 @@ class InviteFriendScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 28.5.h, horizontal: 24.w),
           child: Column(
             children: [
-              AppHeadingRow(text: "Invite Friend"),
+              AppHeadingRow(text: "Invite Friends"),
               SizedBox(height: 28.h),
               Expanded(
                 child: ListView.builder(

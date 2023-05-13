@@ -21,19 +21,22 @@ class AppointmentDetailsScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.center,
                 child: SizedBox(
-                  width: 154.w,
+                  width: 160.w,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       kText(text: "Darrell Steward", fontSize: 22.sp),
                       SizedBox(height: 5.h),
-                      const DecriptionTextRow(
-                        text1: "Voice Call",
-                        text2: "Scheduled",
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
+                        child: const DecriptionTextRow(
+                          text1: "Voice Call",
+                          text2: "Scheduled",
+                        ),
                       ),
                       SizedBox(height: 5.h),
                       const DecriptionTextRow(
-                        text1: "11:00 AM",
+                        text1: "Today,11:00 AM",
                         text2: "12:00 PM",
                       ),
                     ],
@@ -41,30 +44,39 @@ class AppointmentDetailsScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 210.h),
-              kLabelText(
-                text: "Email",
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    kLabelText(
+                      text: "Email",
+                    ),
+                    SizedBox(height: 20.h),
+                    kText(
+                        text: "darrellsteward@yourdomain.com", fontSize: 16.sp),
+                    SizedBox(height: 36.h),
+                    kLabelText(
+                      text: "Phone",
+                    ),
+                    SizedBox(height: 20.h),
+                    kText(text: "012334437483", fontSize: 16.sp),
+                    SizedBox(height: 36.h),
+                    kLabelText(
+                      text: "Gender",
+                    ),
+                    SizedBox(height: 20.h),
+                    kText(text: "Male", fontSize: 16.sp),
+                    SizedBox(height: 36.h),
+                    kLabelText(
+                      text: "Date of Birth",
+                    ),
+                    SizedBox(height: 20.h),
+                    kText(text: "December 27,1995", fontSize: 16.sp),
+                    SizedBox(height: 64.h),
+                  ],
+                ),
               ),
-              SizedBox(height: 20.h),
-              kText(text: "darrellsteward@yourdomain.com", fontSize: 16.sp),
-              SizedBox(height: 36.h),
-              kLabelText(
-                text: "Phone",
-              ),
-              SizedBox(height: 20.h),
-              kText(text: "012334437483", fontSize: 16.sp),
-              SizedBox(height: 36.h),
-              kLabelText(
-                text: "Gender",
-              ),
-              SizedBox(height: 20.h),
-              kText(text: "Male", fontSize: 16.sp),
-              SizedBox(height: 36.h),
-              kLabelText(
-                text: "Date of Birth",
-              ),
-              SizedBox(height: 20.h),
-              kText(text: "December 27,1995", fontSize: 16.sp),
-              SizedBox(height: 64.h),
               AppTransparentBackButton(
                 text: "Back",
                 onPressed: () {

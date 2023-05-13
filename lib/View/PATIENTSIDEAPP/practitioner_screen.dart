@@ -2,7 +2,6 @@ import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/data/doctors_list.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
-import 'package:doctorq/core/app_export.dart';
 import 'package:flutter/material.dart';
 
 import 'light_home_top_doctor_screen/widgets/listfullname3_item_widget.dart';

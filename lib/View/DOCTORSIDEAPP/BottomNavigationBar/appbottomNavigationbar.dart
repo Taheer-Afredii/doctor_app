@@ -31,12 +31,14 @@ class AppBottomNavigationBar extends StatelessWidget {
         icon: Image.asset(
           ImageConstant.home,
           color: ColorConstant.blueA400,
+          width: 24.w,
+          height: 24.h,
         ),
         inactiveIcon: Image.asset(
           ImageConstant.inActiveHome,
           color: ColorConstant.blueA400,
-          width: getHorizontalSize(30),
-          height: getVerticalSize(30),
+          width: 30.w,
+          height: 30.h,
         ),
         title: ("Home"),
         activeColorSecondary: ColorConstant.blueA400,
@@ -47,9 +49,8 @@ class AppBottomNavigationBar extends StatelessWidget {
         icon: Image.asset(
           ImageConstant.notifications,
           color: ColorConstant.blueA400,
-
-          // width: getHorizontalSize(26),
-          // height: getVerticalSize(26),
+          width: 24.w,
+          height: 24.h,
         ),
         inactiveIcon: Container(
           height: 30.h,
@@ -73,14 +74,14 @@ class AppBottomNavigationBar extends StatelessWidget {
         icon: Image.asset(
           ImageConstant.history,
           color: ColorConstant.blueA400,
-          // width: getHorizontalSize(26),
-          // height: getVerticalSize(26),
+          width: 24.w,
+          height: 24.h,
         ),
         inactiveIcon: Image.asset(
           ImageConstant.inActiveHistory,
           color: ColorConstant.blueA400,
-          width: getHorizontalSize(30),
-          height: getVerticalSize(30),
+          width: 30.w,
+          height: 30.h,
         ),
         title: ("History"),
         activeColorSecondary: ColorConstant.blueA400,
@@ -91,14 +92,14 @@ class AppBottomNavigationBar extends StatelessWidget {
         icon: Image.asset(
           ImageConstant.person,
           color: ColorConstant.blueA400,
-          // width: getHorizontalSize(26),
-          // height: getVerticalSize(26),
+          width: 24.w,
+          height: 24.h,
         ),
         inactiveIcon: Image.asset(
           ImageConstant.inActivePerson,
           color: ColorConstant.blueA400,
-          width: getHorizontalSize(30),
-          height: getVerticalSize(30),
+          width: 30.w,
+          height: 30.h,
         ),
         title: ("Profile"),
         activeColorSecondary: ColorConstant.blueA400,

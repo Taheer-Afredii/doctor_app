@@ -1,12 +1,15 @@
-import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/light_reset_password_screen/reset_password_viewmodel.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
-import 'package:doctorq/Widget/Patientwidgets/custom_text_form_field.dart';
+import 'package:doctorq/Widget/doctor_widget/apptextfieldwidget.dart';
 import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/View/PatientSideApp/light_reset_password_successful_screen/light_reset_password_successful_screen.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
+import 'package:doctorq/core/constants/doctor_side_styles.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class LightResetPasswordScreen extends StatefulWidget {
   @override
@@ -25,6 +28,7 @@ class _LightResetPasswordScreenState extends State<LightResetPasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ResetPasswordViewmodel model = Provider.of<ResetPasswordViewmodel>(context);
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: SafeArea(
@@ -96,273 +100,44 @@ class _LightResetPasswordScreenState extends State<LightResetPasswordScreen> {
                         ),
                       ),
                     ),
-                    Container(
-                      width: double.infinity,
-                      margin: getMargin(
-                        left: 24,
-                        top: 26,
-                        right: 24,
-                      ),
-                      decoration: BoxDecoration(),
+                    SizedBox(height: 24.h),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
                       child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                  getHorizontalSize(
-                                    2.00,
-                                  ),
-                                ),
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: getPadding(
-                                      left: 24,
-                                      top: 1,
-                                      right: 24,
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Padding(
-                                          padding: getPadding(
-                                            top: 3,
-                                          ),
-                                          child: Text(
-                                            "New Password",
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.start,
-                                            style: TextStyle(
-                                              color:
-                                                  ColorConstant.bluegray800A2,
-                                              fontSize: getFontSize(
-                                                16,
-                                              ),
-                                              fontFamily: 'Source Sans Pro',
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: getPadding(
-                                            left: 1,
-                                            bottom: 5,
-                                          ),
-                                          child: Text(
-                                            "*",
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.start,
-                                            style: TextStyle(
-                                              color: ColorConstant.redA700A2,
-                                              fontSize: getFontSize(
-                                                14,
-                                              ),
-                                              fontFamily: 'Source Sans Pro',
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  CustomTextFormField(
-                                    validator: (val) {
-                                      if (val!.isEmpty) {
-                                        return "Enter email";
-                                      }
-                                      return null;
-                                    },
-                                    isDark: isDark,
-                                    width: size.width,
-                                    focusNode: FocusNode(),
-                                    hintText: "New Password",
-                                    margin: getMargin(
-                                      top: 11,
-                                    ),
-                                    alignment: Alignment.center,
-                                    suffix: Container(
-                                      margin: getMargin(
-                                        left: 24,
-                                        right: 24,
-                                      ),
-                                      child: InkWell(
-                                        onTap: () {
-                                          setState(() {
-                                            obscure1 = !obscure1;
-                                          });
-                                        },
-                                        child: CommonImageView(
-                                          imagePath: obscure1
-                                              ? ImageConstant.visibilityOff
-                                              : ImageConstant.visibilityOn,
-                                        ),
-                                      ),
-                                    ),
-                                    suffixConstraints: BoxConstraints(
-                                      maxWidth: getHorizontalSize(
-                                        74.00,
-                                      ),
-                                      maxHeight: getVerticalSize(
-                                        24.00,
-                                      ),
-                                    ),
-                                    isObscureText: obscure1,
-                                  ),
-                                ],
-                              ),
-                            ),
+                          profileLabelText(
+                              text: "New Password", fontSize: 16.sp),
+                          SizedBox(height: 8.h),
+                          AppTextFieldWidget(
+                            controller: model.passwordController,
+                            hintText: "New Password",
+                            iconData: model.isPasswordVisible
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            obsecureText: model.isPasswordVisible,
+                            suffixonTap: () {
+                              model.togglePasswordVisibility();
+                            },
+                          ),
+                          SizedBox(height: 24.h),
+                          profileLabelText(text: "Confirm New Password"),
+                          SizedBox(height: 8.h),
+                          AppTextFieldWidget(
+                            obsecureText: model.isConfirmPasswordVisible,
+                            controller: model.confirmPasswordController,
+                            hintText: "Confirm New Password",
+                            iconData: model.isConfirmPasswordVisible
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                            suffixonTap: () {
+                              model.toggleConfirmPasswordVisibility();
+                            },
                           ),
                         ],
                       ),
-                    ),
+                    )
 
-                    Container(
-                      width: double.infinity,
-                      margin: getMargin(
-                        left: 24,
-                        top: 26,
-                        right: 24,
-                      ),
-                      decoration: BoxDecoration(),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Align(
-                            alignment: Alignment.center,
-                            child: Container(
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(
-                                  getHorizontalSize(
-                                    2.00,
-                                  ),
-                                ),
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: getPadding(
-                                      left: 24,
-                                      top: 1,
-                                      right: 24,
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        Padding(
-                                          padding: getPadding(
-                                            top: 3,
-                                          ),
-                                          child: Text(
-                                            "Confirm New Password",
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.start,
-                                            style: TextStyle(
-                                              color:
-                                                  ColorConstant.bluegray800A2,
-                                              fontSize: getFontSize(
-                                                16,
-                                              ),
-                                              fontFamily: 'Source Sans Pro',
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: getPadding(
-                                            left: 1,
-                                            bottom: 5,
-                                          ),
-                                          child: Text(
-                                            "*",
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.start,
-                                            style: TextStyle(
-                                              color: ColorConstant.redA700A2,
-                                              fontSize: getFontSize(
-                                                14,
-                                              ),
-                                              fontFamily: 'Source Sans Pro',
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  CustomTextFormField(
-                                    validator: (val) {
-                                      if (val!.isEmpty) {
-                                        return "Enter email";
-                                      }
-                                      return null;
-                                    },
-                                    isDark: isDark,
-                                    width: size.width,
-                                    focusNode: FocusNode(),
-                                    hintText: "Confirm New Password",
-                                    margin: getMargin(
-                                      top: 11,
-                                    ),
-                                    alignment: Alignment.center,
-                                    suffix: Container(
-                                      margin: getMargin(
-                                        left: 24,
-                                        right: 24,
-                                      ),
-                                      child: InkWell(
-                                        onTap: () {
-                                          setState(() {
-                                            obscure1 = !obscure1;
-                                          });
-                                        },
-                                        child: CommonImageView(
-                                          imagePath: obscure1
-                                              ? ImageConstant.visibilityOff
-                                              : ImageConstant.visibilityOn,
-                                        ),
-                                      ),
-                                    ),
-                                    suffixConstraints: BoxConstraints(
-                                      maxWidth: getHorizontalSize(
-                                        74.00,
-                                      ),
-                                      maxHeight: getVerticalSize(
-                                        24.00,
-                                      ),
-                                    ),
-                                    isObscureText: obscure1,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                     // CustomCheckbox(
                     //   alignment: Alignment.centerLeft,
                     //   text: "Remember me",

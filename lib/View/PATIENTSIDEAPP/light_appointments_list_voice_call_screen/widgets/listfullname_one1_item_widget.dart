@@ -1,4 +1,3 @@
-import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 

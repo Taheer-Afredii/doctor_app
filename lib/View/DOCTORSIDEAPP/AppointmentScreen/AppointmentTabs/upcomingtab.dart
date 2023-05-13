@@ -3,7 +3,7 @@ import 'package:doctorq/View/DOCTORSIDEAPP/AppointmentScreen/AppointmentDetailsS
 import 'package:doctorq/View/DOCTORSIDEAPP/AppointmentScreen/appointment_viewmodel.dart';
 import 'package:doctorq/Widget/doctor_widget/appointmentscreen_container.dart';
 import 'package:doctorq/Widget/doctor_widget/apptextfieldwidget.dart';
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:doctorq/models/appointment_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,7 +28,7 @@ class UpcomingTab extends StatelessWidget {
               flex: 9,
               child: SearchTextFieldWidget(
                 controller: controller,
-                hintText: "search",
+                hintText: "Search",
                 iconData: Icons.search,
               ),
             ),

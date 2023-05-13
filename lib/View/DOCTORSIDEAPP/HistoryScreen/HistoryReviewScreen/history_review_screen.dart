@@ -2,7 +2,6 @@ import 'package:doctorq/Widget/doctor_widget/appbutton.dart';
 import 'package:doctorq/Widget/doctor_widget/appointmentscreen_container.dart';
 import 'package:doctorq/Widget/doctor_widget/apptextfieldwidget.dart';
 import 'package:doctorq/core/app_export.dart';
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,7 +23,7 @@ class HistoryReviewScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 8.h),
+                SizedBox(height: 30.h),
                 Align(
                   alignment: Alignment.center,
                   child: SizedBox(
@@ -59,29 +58,39 @@ class HistoryReviewScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 24.h),
-                kLabelText(
-                  text: "Email",
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      kLabelText(
+                        text: "Email",
+                      ),
+                      SizedBox(height: 20.h),
+                      kText(
+                          text: "darrellsteward@yourdomain.com",
+                          fontSize: 16.sp),
+                      SizedBox(height: 36.h),
+                      kLabelText(
+                        text: "Phone",
+                      ),
+                      SizedBox(height: 20.h),
+                      kText(text: "012334437483", fontSize: 16.sp),
+                      SizedBox(height: 36.h),
+                      kLabelText(
+                        text: "Gender",
+                      ),
+                      SizedBox(height: 20.h),
+                      kText(text: "Male", fontSize: 16.sp),
+                      SizedBox(height: 36.h),
+                      kLabelText(
+                        text: "Date of Birth",
+                      ),
+                      SizedBox(height: 20.h),
+                      kText(text: "December 27,1995", fontSize: 16.sp),
+                    ],
+                  ),
                 ),
-                SizedBox(height: 20.h),
-                kText(text: "darrellsteward@yourdomain.com", fontSize: 16.sp),
-                SizedBox(height: 36.h),
-                kLabelText(
-                  text: "Phone",
-                ),
-                SizedBox(height: 20.h),
-                kText(text: "012334437483", fontSize: 16.sp),
-                SizedBox(height: 36.h),
-                kLabelText(
-                  text: "Gender",
-                ),
-                SizedBox(height: 20.h),
-                kText(text: "Male", fontSize: 16.sp),
-                SizedBox(height: 36.h),
-                kLabelText(
-                  text: "Date of Birth",
-                ),
-                SizedBox(height: 20.h),
-                kText(text: "December 27,1995", fontSize: 16.sp),
                 SizedBox(height: 39.h),
                 //Review row  4.8 *******
 
@@ -106,7 +115,11 @@ class HistoryReviewScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 28.h),
-                kText(text: "Reviews", fontSize: 16.sp, color: lightBlack),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24.w),
+                  child: kText(
+                      text: "Reviews", fontSize: 16.sp, color: lightBlack),
+                ),
                 SizedBox(height: 8.h),
                 AboutTextFieldWidget(
                   controller: reviewController,

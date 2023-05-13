@@ -4,7 +4,6 @@ import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/View/PatientSideApp/light_carousel_one_screen/light_carousel_one_screen.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LightSplashScreen extends StatefulWidget {
   @override

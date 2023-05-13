@@ -22,7 +22,7 @@ class SecuritySettingScreen extends StatelessWidget {
               AppHeadingRow(
                 text: "Security",
               ),
-              SizedBox(height: 24.h),
+              SizedBox(height: 32.h),
               CommonSwitchButton(
                 text: "Face ID",
                 value: model.isFaceId,

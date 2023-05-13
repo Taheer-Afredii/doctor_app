@@ -5,6 +5,7 @@ import 'package:doctorq/View/PatientSideApp/light_home_screen/light_home_screen.
 import 'package:doctorq/View/PatientSideApp/light_profile_settings_screen/light_profile_settings_screen.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 // ignore: must_be_immutable
@@ -24,12 +25,14 @@ class Home extends StatelessWidget {
         icon: Image.asset(
           ImageConstant.home,
           color: ColorConstant.blueA400,
+          width: 24.w,
+          height: 24.h,
         ),
         inactiveIcon: Image.asset(
           ImageConstant.inActiveHome,
           color: ColorConstant.blueA400,
-          width: getHorizontalSize(30),
-          height: getVerticalSize(30),
+          width: 30.w,
+          height: 30.h,
         ),
         title: ("Home"),
         activeColorSecondary: ColorConstant.blueA400,
@@ -40,15 +43,14 @@ class Home extends StatelessWidget {
         icon: Image.asset(
           ImageConstant.eventNote,
           color: ColorConstant.blueA400,
-
-          // width: getHorizontalSize(26),
-          // height: getVerticalSize(26),
+          width: 24.w,
+          height: 24.h,
         ),
         inactiveIcon: Image.asset(
           ImageConstant.inActiveEventNote,
-          width: getHorizontalSize(33),
+          width: 30.w,
+          height: 30.h,
           color: ColorConstant.blueA400,
-          height: getVerticalSize(33),
         ),
         title: ("Appointment"),
         activeColorSecondary: ColorConstant.blueA400,
@@ -59,14 +61,14 @@ class Home extends StatelessWidget {
         icon: Image.asset(
           ImageConstant.history,
           color: ColorConstant.blueA400,
-          // width: getHorizontalSize(26),
-          // height: getVerticalSize(26),
+          width: 24.w,
+          height: 24.h,
         ),
         inactiveIcon: Image.asset(
           ImageConstant.inActiveHistory,
           color: ColorConstant.blueA400,
-          width: getHorizontalSize(30),
-          height: getVerticalSize(30),
+          width: 30.w,
+          height: 30.h,
         ),
         title: ("History"),
         activeColorSecondary: ColorConstant.blueA400,
@@ -77,14 +79,14 @@ class Home extends StatelessWidget {
         icon: Image.asset(
           ImageConstant.person,
           color: ColorConstant.blueA400,
-          // width: getHorizontalSize(26),
-          // height: getVerticalSize(26),
+          width: 24.w,
+          height: 24.h,
         ),
         inactiveIcon: Image.asset(
           ImageConstant.inActivePerson,
           color: ColorConstant.blueA400,
-          width: getHorizontalSize(30),
-          height: getVerticalSize(30),
+          width: 30.w,
+          height: 30.h,
         ),
         title: ("Profile"),
         activeColorSecondary: ColorConstant.blueA400,

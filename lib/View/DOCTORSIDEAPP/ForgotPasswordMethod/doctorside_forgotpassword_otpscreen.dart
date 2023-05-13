@@ -1,5 +1,4 @@
 import 'package:doctorq/View/DOCTORSIDEAPP/ForgotPasswordMethod/doctorside_resetpassword_screen.dart';
-import 'package:doctorq/View/PATIENTSIDEAPP/light_forgot_password_otp_active_screen/light_forgot_password_otp_active_screen.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/Widget/Patientwidgets/boxshadow.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';

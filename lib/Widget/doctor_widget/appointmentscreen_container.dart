@@ -1,18 +1,18 @@
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppointmentScreenmainContainer extends StatelessWidget {
-  String image;
-  String name;
-  String time;
-  String time2;
-  String callText;
-  String scheduleText;
-  IconData icon;
-  Color sheduleTextColor;
-  VoidCallback onTap;
+  final String image;
+  final String name;
+  final String time;
+  final String time2;
+  final String callText;
+  final String scheduleText;
+  final IconData icon;
+  final Color sheduleTextColor;
+  final VoidCallback onTap;
   AppointmentScreenmainContainer({
     super.key,
     required this.image,
@@ -45,7 +45,12 @@ class AppointmentScreenmainContainer extends StatelessWidget {
                 child: Stack(
                   alignment: AlignmentDirectional.bottomEnd,
                   children: [
-                    Image.asset(image),
+                    ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(12.r),
+                          bottomLeft: Radius.circular(12.r),
+                        ),
+                        child: Image.asset(image)),
                     Container(
                       height: 36.h,
                       width: 36.w,

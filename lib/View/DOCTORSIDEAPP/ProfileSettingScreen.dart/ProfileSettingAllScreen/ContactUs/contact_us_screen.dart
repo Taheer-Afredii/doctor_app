@@ -19,7 +19,7 @@ class ContactUsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppHeadingRow(text: "Contact Us"),
-            SizedBox(height: 24.h),
+            SizedBox(height: 32.h),
             profileLabelText(text: "Full Name"),
             SizedBox(height: 8.h),
             AppTextFieldWidget(controller: controller, hintText: "Full Name"),

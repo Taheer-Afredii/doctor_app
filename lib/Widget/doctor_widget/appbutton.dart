@@ -1,14 +1,14 @@
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:doctorq/core/utils/image_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppButton extends StatelessWidget {
-  VoidCallback? onPressed;
-  double? width;
-  double? height;
-  String? text;
+  final VoidCallback? onPressed;
+  final double? width;
+  final double? height;
+  final String? text;
 
   AppButton({
     this.width,
@@ -47,10 +47,10 @@ class AppButton extends StatelessWidget {
 }
 
 class AppTransparentButton extends StatelessWidget {
-  VoidCallback? onPressed;
-  double? width;
-  double? height;
-  String? text;
+  final VoidCallback? onPressed;
+  final double? width;
+  final double? height;
+  final String? text;
   AppTransparentButton({
     super.key,
     this.width,
@@ -87,11 +87,11 @@ class AppTransparentButton extends StatelessWidget {
 }
 
 class AppTransparentBackButton extends StatelessWidget {
-  VoidCallback? onPressed;
-  double? width;
-  double? height;
-  String? text;
-  double? radius;
+  final VoidCallback? onPressed;
+  final double? width;
+  final double? height;
+  final String? text;
+  final double? radius;
   AppTransparentBackButton({
     super.key,
     this.width,
@@ -139,10 +139,10 @@ class AppTransparentBackButton extends StatelessWidget {
 }
 
 class SendMessageButton extends StatelessWidget {
-  VoidCallback? onPressed;
-  double? width;
-  double? height;
-  String? text;
+  final VoidCallback? onPressed;
+  final double? width;
+  final double? height;
+  final String? text;
   SendMessageButton({
     super.key,
     this.width,
@@ -191,10 +191,10 @@ class SendMessageButton extends StatelessWidget {
 }
 
 class AppSwitchButton extends StatelessWidget {
-  VoidCallback? onPressed;
-  double? width;
-  double? height;
-  String? text;
+  final VoidCallback? onPressed;
+  final double? width;
+  final double? height;
+  final String? text;
   AppSwitchButton({
     super.key,
     this.width,

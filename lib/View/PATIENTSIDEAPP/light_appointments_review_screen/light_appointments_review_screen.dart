@@ -5,6 +5,7 @@ import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/core/app_export.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LightAppointmentsReviewScreen extends StatefulWidget {
   @override
@@ -106,6 +107,7 @@ class _LightAppointmentsReviewScreenState
                 Container(
                   height: getVerticalSize(36),
                   child: TabBar(
+                    labelPadding: EdgeInsets.symmetric(horizontal: 5.w),
                     controller: tabController,
                     onTap: (index) {
                       setState(() {

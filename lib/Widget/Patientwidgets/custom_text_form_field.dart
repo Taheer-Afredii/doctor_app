@@ -120,7 +120,7 @@ class CustomTextFormField extends StatelessWidget {
       fillColor: _setFillColor(),
       filled: _setFilled(),
       isDense: true,
-      contentPadding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 18.h),
+      contentPadding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 18.h),
     );
   }
 

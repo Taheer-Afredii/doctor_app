@@ -68,7 +68,7 @@ class CustomSearchView extends StatelessWidget {
       width: getHorizontalSize(width ?? 0),
       margin: margin,
       child: TextFormField(
-        autofocus: true,
+        autofocus: false,
         readOnly: readOnly,
         onTap: onTap,
         controller: controller,

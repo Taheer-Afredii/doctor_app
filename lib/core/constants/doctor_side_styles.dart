@@ -1,7 +1,6 @@
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 Text kText({
   required String text,
@@ -18,22 +17,24 @@ Text kText({
     style: TextStyle(
       color: color ?? blackColor,
       fontSize: fontSize ?? 14.sp,
-      // fontFamily: 'Avenir55',
       fontWeight: fontWeight ?? FontWeight.w600,
+      fontFamily: "Source Sans Pro",
     ),
   );
 }
 
-Widget profileLabelText({required String text, Color? color}) {
+Widget profileLabelText(
+    {required String text, Color? color, double? fontSize, double? padding}) {
   return Padding(
-    padding: EdgeInsets.symmetric(horizontal: 28.w),
+    padding: EdgeInsets.symmetric(horizontal: padding ?? 28.w),
     child: RichText(
       text: TextSpan(
         text: text,
         style: TextStyle(
-          color: color ?? blackColor,
-          fontSize: 14.sp,
+          color: color ?? ColorConstant.bluegray800A2,
+          fontSize: fontSize ?? 14.sp,
           fontWeight: FontWeight.w600,
+          fontFamily: "Source Sans Pro",
         ),
         children: [
           TextSpan(
@@ -81,7 +82,7 @@ TextStyle kTextStyle({
   return TextStyle(
     color: color ?? blackColor,
     fontSize: fontSize ?? 14.sp,
-    fontFamily: GoogleFonts.sourceSansPro().fontFamily,
+    fontFamily: "Source Sans Pro",
     fontWeight: fontWeight ?? FontWeight.normal,
   );
 }

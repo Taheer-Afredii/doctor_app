@@ -1,18 +1,18 @@
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppCenetrTextContainer extends StatelessWidget {
-  VoidCallback? onPressed;
-  double? width;
-  double? height;
-  String? text;
-  double? radius;
-  Color? color;
-  Color? textColor;
-  double? fontSize;
-  FontWeight? fontWeight;
+  final VoidCallback? onPressed;
+  final double? width;
+  final double? height;
+  final String? text;
+  final double? radius;
+  final Color? color;
+  final Color? textColor;
+  final double? fontSize;
+  final FontWeight? fontWeight;
 
   AppCenetrTextContainer({
     super.key,
@@ -33,7 +33,7 @@ class AppCenetrTextContainer extends StatelessWidget {
       onTap: onPressed ?? () {},
       child: Container(
         width: width ?? 380.w,
-        height: height ?? 55.h,
+        height: height ?? 24.h,
         decoration: BoxDecoration(
           color: color ?? Colors.transparent,
           borderRadius: BorderRadius.circular(radius ?? 32.r),

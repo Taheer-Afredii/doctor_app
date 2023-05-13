@@ -1,5 +1,5 @@
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -88,7 +88,7 @@ class AppTextFieldWidget extends StatelessWidget {
               child: Icon(
                 iconData,
                 color: blackColor.withOpacity(0.5),
-                size: 30.sp,
+                size: 22.sp,
               ),
             ),
           ),
@@ -346,7 +346,8 @@ class MessageTextField extends StatelessWidget {
         decoration: InputDecoration(
           filled: true,
           fillColor: whiteColor,
-          // contentPadding: EdgeInsets.symmetric(vertical: 5.h),
+          contentPadding:
+              EdgeInsets.symmetric(horizontal: 24.w, vertical: 12.h),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.r),
             borderSide: const BorderSide(

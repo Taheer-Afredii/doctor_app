@@ -1,10 +1,10 @@
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomDropDown extends StatelessWidget {
-  CustomDropDown(
+class AppCustomDropDown extends StatelessWidget {
+  AppCustomDropDown(
       {super.key,
       this.alignment,
       this.width,
@@ -19,34 +19,34 @@ class CustomDropDown extends StatelessWidget {
       this.onChanged,
       this.value});
 
-  Alignment? alignment;
+  final Alignment? alignment;
 
-  double? width;
+  final double? width;
 
-  EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? margin;
 
-  FocusNode? focusNode;
+  final FocusNode? focusNode;
 
-  Widget? icon;
+  final Widget? icon;
 
-  String? hintText;
+  final String? hintText;
 
-  Widget? prefix;
+  final Widget? prefix;
 
-  BoxConstraints? prefixConstraints;
+  final BoxConstraints? prefixConstraints;
 
-  List<String>? items;
+  final List<String>? items;
 
-  Function(String)? onChanged;
+  final Function(String)? onChanged;
 
-  Object? value;
-  DropDownFontStyle? fontStyle;
+  final Object? value;
+  final DropDownFontStyle? fontStyle;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width ?? 380.w,
-      height: 60.h,
+      height: 55.h,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -59,7 +59,7 @@ class CustomDropDown extends StatelessWidget {
       ),
       child: DropdownButtonFormField(
         icon: icon,
-        iconSize: 48.sp,
+        iconSize: 40.sp,
         style: kTextStyle(
           color: Colors.black,
           fontSize: 16.sp,

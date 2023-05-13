@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:doctorq/View/DOCTORSIDEAPP/HistoryScreen/HistoryReviewScreen/history_review_screen.dart';
 import 'package:doctorq/Widget/doctor_widget/historyscreen_main_container.dart';
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:doctorq/core/utils/formated_date.dart';
 import 'package:doctorq/models/appointment_model.dart';
 

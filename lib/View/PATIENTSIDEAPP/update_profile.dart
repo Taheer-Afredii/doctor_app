@@ -1,13 +1,16 @@
+import 'package:doctorq/View/DOCTORSIDEAPP/AddProfileScreen/addprofile_screen.dart';
 import 'package:doctorq/Widget/Patientwidgets/boxshadow.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
-import 'package:doctorq/Widget/Patientwidgets/custom_text_form_field.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
+import 'package:doctorq/Widget/doctor_widget/apptextfieldwidget.dart';
 import 'package:doctorq/Widget/doctor_widget/custom_dropdown.dart';
 import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_icon_button.dart';
+import 'package:doctorq/core/constants/doctor_side_styles.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UpdateProfileScreen extends StatefulWidget {
   @override
@@ -16,7 +19,7 @@ class UpdateProfileScreen extends StatefulWidget {
 
 class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   List<String> dropdownItemList = ["Male", "Female"];
-  Object dropDownVal = 'Male';
+  Object? dropDownVal;
   TextEditingController nameController = TextEditingController(
     text: "John Doe",
   );
@@ -29,6 +32,7 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   String? DOB = "1990-01-01";
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
@@ -162,429 +166,44 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: getPadding(
-                            left: 24,
-                            right: 24,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                "Full Name",
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  color: isDark
-                                      ? Colors.white
-                                      : ColorConstant.bluegray800A2,
-                                  fontSize: getFontSize(
-                                    16,
-                                  ),
-                                  fontFamily: 'Source Sans Pro',
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Padding(
-                                padding: getPadding(
-                                  bottom: 5,
-                                ),
-                                child: Text(
-                                  "*",
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.start,
-                                  style: TextStyle(
-                                    color: ColorConstant.redA700A2,
-                                    fontSize: getFontSize(
-                                      14,
-                                    ),
-                                    fontFamily: 'Source Sans Pro',
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              boxShadow: isDark
-                                  ? customDarkBoxShadow
-                                  : customBoxShadow),
-                          child: CustomTextFormField(
-                            controller: nameController,
-                            isDark: isDark,
-                            width: size.width,
-                            focusNode: FocusNode(),
-                            hintText: "Full Name",
-                            margin: getMargin(
-                              top: 11,
-                            ),
-                            alignment: Alignment.center,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: getPadding(left: 24, right: 24, top: 24),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: getPadding(
-                            left: 24,
-                            right: 24,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                "Email",
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  color: isDark
-                                      ? Colors.white
-                                      : ColorConstant.bluegray800A2,
-                                  fontSize: getFontSize(
-                                    16,
-                                  ),
-                                  fontFamily: 'Source Sans Pro',
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Padding(
-                                padding: getPadding(
-                                  bottom: 5,
-                                ),
-                                child: Text(
-                                  "*",
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.start,
-                                  style: TextStyle(
-                                    color: ColorConstant.redA700A2,
-                                    fontSize: getFontSize(
-                                      14,
-                                    ),
-                                    fontFamily: 'Source Sans Pro',
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              boxShadow: isDark
-                                  ? customDarkBoxShadow
-                                  : customBoxShadow),
-                          child: CustomTextFormField(
-                            controller: emailController,
-                            isDark: isDark,
-                            width: size.width,
-                            focusNode: FocusNode(),
+                        profileLabelText(text: "Full Name"),
+                        SizedBox(height: 8.h),
+                        AppTextFieldWidget(
+                            controller: controller, hintText: "Full Name"),
+                        SizedBox(height: 24.h),
+                        profileLabelText(text: "Email"),
+                        SizedBox(height: 8.h),
+                        AppTextFieldWidget(
+                            controller: controller,
                             hintText: "Email",
-                            margin: getMargin(
-                              top: 11,
-                            ),
-                            suffix: Padding(
-                              padding: getPadding(left: 20, right: 20),
-                              child: Image.asset(
-                                ImageConstant.mailOutline,
-                              ),
-                            ),
-                            suffixConstraints: BoxConstraints(
-                                maxWidth: getHorizontalSize(64),
-                                maxHeight: getVerticalSize(24)),
-                            alignment: Alignment.center,
-                          ),
+                            iconData: Icons.email_outlined),
+                        SizedBox(height: 24.h),
+                        profileLabelText(text: "Gender"),
+                        SizedBox(height: 8.h),
+                        AppCustomDropDown(
+                          // isDark: isDark,
+
+                          hintText: "Gender",
+                          value: dropDownVal,
+
+                          items: dropdownItemList,
+                          fontStyle: DropDownFontStyle.PlusJakartaSansMedium14,
+                          onChanged: (value) {
+                            setState(() {
+                              dropDownVal = value;
+                            });
+                          },
                         ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: getPadding(left: 24, right: 24, top: 24),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: getPadding(
-                            left: 24,
-                            right: 24,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                "Gender",
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  color: isDark
-                                      ? Colors.white
-                                      : ColorConstant.bluegray800A2,
-                                  fontSize: getFontSize(
-                                    16,
-                                  ),
-                                  fontFamily: 'Source Sans Pro',
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Padding(
-                                padding: getPadding(
-                                  bottom: 5,
-                                ),
-                                child: Text(
-                                  "*",
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.start,
-                                  style: TextStyle(
-                                    color: ColorConstant.redA700A2,
-                                    fontSize: getFontSize(
-                                      14,
-                                    ),
-                                    fontFamily: 'Source Sans Pro',
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        VerticalSpace(height: 10),
-                        Container(
-                          height: getVerticalSize(65),
-                          decoration: BoxDecoration(
-                              boxShadow: isDark
-                                  ? customDarkBoxShadow
-                                  : customBoxShadow),
-                          child: CustomDropDown(
-                            // isDark: isDark,
-                            width: size.width,
-                            focusNode: FocusNode(),
-                            hintText: "Gender",
-                            value: dropDownVal,
-                            icon: Image.asset(
-                              ImageConstant.dropDown,
-                              height: getVerticalSize(
-                                7.00,
-                              ),
-                              width: getHorizontalSize(
-                                15.00,
-                              ),
-                            ),
-                            items: dropdownItemList,
-                            fontStyle:
-                                DropDownFontStyle.PlusJakartaSansMedium14,
-                            onChanged: (value) {
-                              setState(() {
-                                dropDownVal = value;
-                              });
-                            },
-                            alignment: Alignment.center,
-                            prefixConstraints: BoxConstraints(
-                              minWidth: getSize(
-                                20.00,
-                              ),
-                              minHeight: getSize(
-                                20.00,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  VerticalSpace(height: 20),
-                  Padding(
-                    padding: getPadding(
-                      left: 45,
-                      right: 44,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          "Date of Birth",
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                            color: isDark
-                                ? Colors.white
-                                : ColorConstant.bluegray800A2,
-                            fontSize: getFontSize(
-                              16,
-                            ),
-                            fontFamily: 'Source Sans Pro',
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        Padding(
-                          padding: getPadding(
-                            bottom: 5,
-                          ),
-                          child: Text(
-                            "*",
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              color: ColorConstant.redA700A2,
-                              fontSize: getFontSize(
-                                14,
-                              ),
-                              fontFamily: 'Source Sans Pro',
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () async {
-                      await _selectDate(context);
-                    },
-                    child: Container(
-                      margin: getMargin(left: 35, right: 35, top: 10),
-                      padding:
-                          getPadding(left: 10, right: 20, top: 12, bottom: 12),
-                      decoration: BoxDecoration(
-                          boxShadow:
-                              isDark ? customDarkBoxShadow : customBoxShadow,
-                          border: Border.all(
-                            color: isDark
-                                ? ColorConstant.darkLine
-                                : ColorConstant.bluegray50,
-                          ),
-                          color: isDark
-                              ? ColorConstant.darkTextField
-                              : ColorConstant.whiteA700,
-                          borderRadius: BorderRadius.circular(24)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            DOB.toString(),
-                            style: TextStyle(
-                              fontFamily: 'Source Sans Pro',
-                              fontSize: getFontSize(16),
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Icon(
-                            Icons.calendar_today_rounded,
-                            color: Color(0xff858C94),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                  Container(
-                    width: double.infinity,
-                    margin: getMargin(
-                      left: 24,
-                      top: 24,
-                      right: 24,
-                    ),
-                    decoration: BoxDecoration(),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Container(
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                getHorizontalSize(
-                                  2.00,
-                                ),
-                              ),
-                            ),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: getPadding(
-                                    left: 23,
-                                    right: 23,
-                                  ),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Text(
-                                        "Address",
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                          color: isDark
-                                              ? Colors.white
-                                              : ColorConstant.bluegray800A2,
-                                          fontSize: getFontSize(
-                                            16,
-                                          ),
-                                          fontFamily: 'Source Sans Pro',
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                      Text(
-                                        "*",
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.start,
-                                        style: TextStyle(
-                                          color: ColorConstant.redA700A2,
-                                          fontSize: getFontSize(
-                                            14,
-                                          ),
-                                          fontFamily: 'Source Sans Pro',
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Container(
-                                  decoration: BoxDecoration(
-                                      boxShadow: isDark
-                                          ? customDarkBoxShadow
-                                          : customBoxShadow),
-                                  child: CustomTextFormField(
-                                    controller: addressController,
-                                    isDark: isDark,
-                                    width: size.width,
-                                    focusNode: FocusNode(),
-                                    hintText: "Address",
-                                    margin: getMargin(
-                                      top: 11,
-                                    ),
-                                    textInputAction: TextInputAction.done,
-                                    alignment: Alignment.center,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
+                        SizedBox(height: 24.h),
+                        profileLabelText(text: "Date of Birth"),
+                        SizedBox(height: 8.h),
+                        DOBContainer(),
+                        SizedBox(height: 24.h),
+                        profileLabelText(text: "Address"),
+                        SizedBox(height: 8.h),
+                        AppTextFieldWidget(
+                          controller: controller,
+                          hintText: "Address",
                         ),
                       ],
                     ),

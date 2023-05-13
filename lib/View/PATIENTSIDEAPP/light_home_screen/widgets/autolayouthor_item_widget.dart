@@ -4,6 +4,7 @@ import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/data/specialist_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class AutolayouthorItemWidget extends StatelessWidget {
@@ -70,23 +71,23 @@ class AutolayouthorItemWidget extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 16.h),
               Container(
-                margin: getMargin(
-                  left: 20,
-                  top: 22,
-                  right: 20,
-                ),
-                child: Text(
-                  specialistList[index].name,
-                  maxLines: null,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: ColorConstant.whiteA700,
-                    fontSize: getFontSize(
-                      16,
+                height: 42.w,
+                width: 92.w,
+                child: Center(
+                  child: Text(
+                    specialistList[index].name,
+                    maxLines: null,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: ColorConstant.whiteA700,
+                      fontSize: getFontSize(
+                        14,
+                      ),
+                      fontFamily: 'Source Sans Pro',
+                      fontWeight: FontWeight.w600,
                     ),
-                    fontFamily: 'Source Sans Pro',
-                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),

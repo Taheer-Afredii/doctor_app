@@ -4,6 +4,7 @@ import 'package:doctorq/Widget/Patientwidgets/custom_search_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/data/doctors_list.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../light_home_search_doctor_screen/widgets/listfullname1_item_widget.dart';
 import 'package:doctorq/core/app_export.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,7 @@ class _LightHomeSearchDoctorScreenState
                       child: CustomSearchView(
                         isDark: isDark,
                         width: size.width,
-                        focusNode: FocusNode(canRequestFocus: true),
+                        // focusNode: FocusNode(canRequestFocus: false),
                         controller: autoLayoutVerController,
                         hintText: "Search",
                         alignment: Alignment.center,
@@ -95,14 +96,17 @@ class _LightHomeSearchDoctorScreenState
             ),
             VerticalSpace(height: 24),
             Container(
+              //color: Colors.red,
               height: getVerticalSize(36),
               child: TabBar(
+                labelPadding: EdgeInsets.symmetric(horizontal: 8.w),
                 controller: tabController,
                 onTap: (index) {
                   setState(() {
                     selectIndex = index;
                   });
                 },
+                //  indicatorSize: TabBarIndicatorSize.,
                 tabs: [
                   Container(
                     height: 50,
@@ -250,7 +254,7 @@ class _LightHomeSearchDoctorScreenState
                   ),
                 ],
                 isScrollable: true,
-                padding: getPadding(left: 10, right: 40),
+                padding: EdgeInsets.zero,
                 indicator: BoxDecoration(),
                 // indicator: BoxDecoration(
                 //     borderRadius: BorderRadius.circular(50),

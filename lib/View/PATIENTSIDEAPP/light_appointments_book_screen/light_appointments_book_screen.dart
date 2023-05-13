@@ -1,16 +1,21 @@
+import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_book_screen/appointment_book_screen_viewmodel.dart';
 import 'package:doctorq/View/PatientSideApp/light_appointments_step_2_filled_screen/light_appointments_step_2_filled_screen.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_icon_button.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
+import 'package:doctorq/core/constants/doctor_side_styles.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/models/doctors_model.dart';
 import 'package:doctorq/View/PatientSideApp/light_appointments_review_screen/light_appointments_review_screen.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:doctorq/core/app_export.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class LightAppointmentsBookScreen extends StatefulWidget {
   DoctorsModel doctor;
   LightAppointmentsBookScreen({required this.doctor});
@@ -22,8 +27,11 @@ class LightAppointmentsBookScreen extends StatefulWidget {
 class _LightAppointmentsBookScreenState
     extends State<LightAppointmentsBookScreen> {
   bool isFav = false;
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    AppointmentBookScreenViewModel model =
+        Provider.of<AppointmentBookScreenViewModel>(context);
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     bool isRtl = false;
     return Scaffold(
@@ -619,11 +627,25 @@ class _LightAppointmentsBookScreenState
                     ),
                     VerticalSpace(height: 12),
                     Padding(
-                      padding: getPadding(right: 20, left: 20),
-                      child: DatePickerDialog(
-                        initialDate: DateTime.now(),
-                        firstDate: DateTime.now(),
-                        lastDate: DateTime(2022),
+                      padding: EdgeInsets.symmetric(horizontal: 20.w),
+                      child: SizedBox(
+                        height: 80.h,
+                        width: 1.sh,
+                        child: ListView.builder(
+                            shrinkWrap: true,
+                            itemCount: weekday.length,
+                            scrollDirection: Axis.horizontal,
+                            physics: NeverScrollableScrollPhysics(),
+                            itemBuilder: (context, index) {
+                              return DaySelectionContainerPateint(
+                                selectedIndex: model.selectedIndex,
+                                text1: weekday[index],
+                                index: index,
+                                onPressed: () {
+                                  model.getweekDay(index);
+                                },
+                              );
+                            }),
                       ),
                     ),
                     CustomButton(
@@ -652,6 +674,46 @@ class _LightAppointmentsBookScreenState
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class DaySelectionContainerPateint extends StatelessWidget {
+  final String text1;
+  final int index;
+  final int selectedIndex;
+
+  final VoidCallback onPressed;
+  DaySelectionContainerPateint({
+    super.key,
+    required this.text1,
+    required this.onPressed,
+    required this.index,
+    required this.selectedIndex,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 4.w),
+        height: 70.h,
+        width: 48.w,
+        decoration: BoxDecoration(
+          color: index == selectedIndex ? blueColor : Colors.white,
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(
+            color: blueColor,
+          ),
+        ),
+        child: Center(
+            child: kText(
+          text: text1,
+          fontSize: 14.sp,
+          color: index == selectedIndex ? whiteColor : blueColor,
+        )),
       ),
     );
   }

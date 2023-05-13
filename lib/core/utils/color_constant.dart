@@ -1,6 +1,29 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
+Color fromHex(String hexString) {
+  final buffer = StringBuffer();
+  if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
+  buffer.write(hexString.replaceFirst('#', ''));
+  return Color(int.parse(buffer.toString(), radix: 16));
+}
+
+const Color blackColor = Color(0xFF000000);
+const Color whiteColor = Color(0xFFFFFFFF);
+const Color greenColor = Color(0xFF439B49);
+const Color darkGreyColor = Color(0xFF4C4C4C);
+const Color greyColor = Color(0xFFB0AFAF);
+const Color redColor = Color(0xFFFF6767);
+const Color lightGreyColor = Color(0xFFF5F0F0);
+const Color yellowColor = Color(0xFFFFDF1D);
+const Color goldColor = Color(0xFFFFCD19);
+const Color blueColor = Color(0xFF46BBFF);
+const Color lightBlueColor = Color(0xff46BBFF);
+Color shadowColor = fromHex('#145a6cea');
+Color hintColor = fromHex('#DADEE3');
+Color backgroundColor = const Color.fromRGBO(41, 114, 254, 0.1);
+Color lightBlack = fromHex("#2C3A4B");
+
 class ColorConstant {
   static Color pink300E5 = fromHex('#e5ff5d7b');
   static Color lightLine = fromHex('#EBEEF2');
@@ -11,8 +34,8 @@ class ColorConstant {
 
   static Color bluegray50 = fromHex('#eaeef2');
 
-  static Color blueA400 = Color(0xff38B6FF);
-  static Color bluedark = Color(0xff2972FE);
+  static Color blueA400 = const Color(0xff38B6FF);
+  static Color bluedark = const Color(0xff2972FE);
 
   static Color darkBg = fromHex('#0D0D0D');
 
@@ -77,7 +100,7 @@ class ColorConstant {
   static Color bluegray300 = fromHex('#a4abb3');
 
   // static Color blue300 = fromHex('#6399ff');
-  static Color blue300 = Color(0xff85D0FF);
+  static Color blue300 = const Color(0xff85D0FF);
 
   static Color indigo601 = fromHex('#2e5aac');
 

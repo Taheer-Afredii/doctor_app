@@ -95,127 +95,108 @@ class LightProfileSettingsScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: getPadding(
-                    top: 16,
-                  ),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: getPadding(
-                            left: 24,
-                            right: 24,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                height: getSize(
-                                  100.00,
+            Padding(
+              padding: getPadding(
+                top: 16,
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Padding(
+                      padding: getPadding(
+                        left: 24,
+                        right: 24,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Container(
+                            height: getSize(
+                              100.00,
+                            ),
+                            width: getSize(
+                              100.00,
+                            ),
+                            child: Stack(
+                              alignment: Alignment.bottomRight,
+                              children: [
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(
+                                      getHorizontalSize(
+                                        50.00,
+                                      ),
+                                    ),
+                                    child: CommonImageView(
+                                      imagePath: ImageConstant.imgImage19,
+                                      height: getSize(
+                                        100.00,
+                                      ),
+                                      width: getSize(
+                                        100.00,
+                                      ),
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
                                 ),
-                                width: getSize(
-                                  100.00,
-                                ),
-                                child: Stack(
+                                CustomIconButton(
+                                  // isRtl: isRtl,
+                                  height: 20,
+                                  width: 20,
+                                  margin: getMargin(
+                                    left: 10,
+                                    top: 10,
+                                  ),
+                                  variant: IconButtonVariant.FillBlueA400,
+                                  shape: IconButtonShape.CircleBorder10,
+                                  padding: IconButtonPadding.PaddingAll3,
                                   alignment: Alignment.bottomRight,
-                                  children: [
-                                    Align(
-                                      alignment: Alignment.centerLeft,
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(
-                                          getHorizontalSize(
-                                            50.00,
-                                          ),
-                                        ),
-                                        child: CommonImageView(
-                                          imagePath: ImageConstant.imgImage19,
-                                          height: getSize(
-                                            100.00,
-                                          ),
-                                          width: getSize(
-                                            100.00,
-                                          ),
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                    CustomIconButton(
-                                      // isRtl: isRtl,
-                                      height: 20,
-                                      width: 20,
-                                      margin: getMargin(
-                                        left: 10,
-                                        top: 10,
-                                      ),
-                                      variant: IconButtonVariant.FillBlueA400,
-                                      shape: IconButtonShape.CircleBorder10,
-                                      padding: IconButtonPadding.PaddingAll3,
-                                      alignment: Alignment.bottomRight,
-                                      child: Image.asset(
-                                        ImageConstant.edit,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ],
+                                  child: Image.asset(
+                                    ImageConstant.edit,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
-                              HorizontalSpace(width: 13),
-                              Padding(
-                                padding: getPadding(
-                                  top: 11,
-                                  bottom: 8,
+                              ],
+                            ),
+                          ),
+                          HorizontalSpace(width: 13),
+                          Padding(
+                            padding: getPadding(
+                              top: 11,
+                              bottom: 8,
+                            ),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Adam Smith",
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontSize: getFontSize(
+                                      23,
+                                    ),
+                                    fontFamily: 'Source Sans Pro',
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Adam Smith",
-                                      overflow: TextOverflow.ellipsis,
-                                      textAlign: TextAlign.start,
-                                      style: TextStyle(
-                                        fontSize: getFontSize(
-                                          23,
-                                        ),
-                                        fontFamily: 'Source Sans Pro',
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                Align(
+                                  alignment: Alignment.center,
+                                  child: Padding(
+                                    padding: getPadding(
+                                      top: 15,
                                     ),
-                                    Align(
-                                      alignment: Alignment.center,
-                                      child: Padding(
-                                        padding: getPadding(
-                                          top: 15,
-                                        ),
-                                        child: Text(
-                                          "adam.smith@yourdomain.com",
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.start,
-                                          style: TextStyle(
-                                            color: isDark
-                                                ? Colors.white
-                                                : ColorConstant.bluegray700,
-                                            fontSize: getFontSize(
-                                              16,
-                                            ),
-                                            fontFamily: 'Source Sans Pro',
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      "Indonesia",
+                                    child: Text(
+                                      "adam.smith@yourdomain.com",
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
@@ -229,477 +210,56 @@ class LightProfileSettingsScreen extends StatelessWidget {
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                                Text(
+                                  "Indonesia",
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    color: isDark
+                                        ? Colors.white
+                                        : ColorConstant.bluegray700,
+                                    fontSize: getFontSize(
+                                      16,
+                                    ),
+                                    fontFamily: 'Source Sans Pro',
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                      Container(
-                        margin:
-                            getMargin(left: 24, top: 10, right: 24, bottom: 0),
-                        child: CustomDivider(isDark: isDark),
-                      ),
-                      FadeInUp(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          LightProfileSettingsNotificationScreen()),
-                                );
-                              },
-                              child: Padding(
-                                padding: getPadding(
-                                    top: 10.0,
-                                    bottom: 10.0,
-                                    left: 20,
-                                    right: 20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        CustomIconButton(
-                                          // isRtl: isRtl,
-                                          height: 56,
-                                          width: 56,
-                                          variant:
-                                              IconButtonVariant.FillBlueA40019,
-                                          shape: IconButtonShape.CircleBorder10,
-                                          padding:
-                                              IconButtonPadding.PaddingAll16,
-                                          child: CommonImageView(
-                                            imagePath:
-                                                ImageConstant.notifications,
-                                            color: ColorConstant.blueA400,
-                                          ),
-                                        ),
-                                        HorizontalSpace(width: 16),
-                                        Text(
-                                          "Notification",
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.start,
-                                          style: TextStyle(
-                                            fontSize: getFontSize(
-                                              16,
-                                            ),
-                                            fontFamily: 'Source Sans Pro',
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios_rounded,
-                                      color: ColorConstant.blueA400,
-                                      size: getSize(20),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: getMargin(
-                                left: 24,
-                                right: 24,
-                              ),
-                              child: CustomDivider(isDark: isDark),
-                            ),
-                            // InkWell(
-                            //   onTap: () {
-                            //     Navigator.push(
-                            //       context,
-                            //       MaterialPageRoute(
-                            //           builder: (context) =>
-                            //               LightProfileSettingsSecurityScreen()),
-                            //     );
-                            //   },
-                            //   child: Padding(
-                            //     padding: getPadding(
-                            //         top: 16.0,
-                            //         bottom: 16.0,
-                            //         left: 20,
-                            //         right: 20),
-                            //     child: Row(
-                            //       mainAxisAlignment:
-                            //           MainAxisAlignment.spaceBetween,
-                            //       crossAxisAlignment: CrossAxisAlignment.center,
-                            //       mainAxisSize: MainAxisSize.max,
-                            //       children: [
-                            //         Row(
-                            //           crossAxisAlignment:
-                            //               CrossAxisAlignment.center,
-                            //           mainAxisSize: MainAxisSize.min,
-                            //           children: [
-                            //             CustomIconButton(
-                            //               isRtl: isRtl,
-                            //               height: 56,
-                            //               width: 56,
-                            //               variant:
-                            //                   IconButtonVariant.FillBlueA40019,
-                            //               shape: IconButtonShape.CircleBorder10,
-                            //               padding:
-                            //                   IconButtonPadding.PaddingAll16,
-                            //               child: CommonImageView(
-                            //                 imagePath: ImageConstant.security,
-                            //                 color: ColorConstant.blueA400,
-                            //               ),
-                            //             ),
-                            //             HorizontalSpace(width: 16),
-                            //             Text(
-                            //               "Security",
-                            //               overflow: TextOverflow.ellipsis,
-                            //               textAlign: TextAlign.start,
-                            //               style: TextStyle(
-                            //                 fontSize: getFontSize(
-                            //                   16,
-                            //                 ),
-                            //                 fontFamily: 'Source Sans Pro',
-                            //                 fontWeight: FontWeight.w600,
-                            //               ),
-                            //             ),
-                            //           ],
-                            //         ),
-                            //         Icon(
-                            //           Icons.arrow_forward_ios_rounded,
-                            //           color: ColorConstant.blueA400,
-                            //           size: getSize(20),
-                            //         )
-                            //       ],
-                            //     ),
-                            //   ),
-                            // ),
-                            // Container(
-                            //   margin: getMargin(
-                            //     left: 24,
-                            //     right: 24,
-                            //   ),
-                            //   child: CustomDivider(isDark: isDark),
-                            // ),
-                            // InkWell(
-                            //   onTap: () {
-                            //     Navigator.push(
-                            //       context,
-                            //       MaterialPageRoute(
-                            //           builder: (context) =>
-                            //               LightProfileSettingsAppearanceScreen()),
-                            //     );
-                            //   },
-                            //   child: Padding(
-                            //     padding: getPadding(
-                            //         top: 16.0,
-                            //         bottom: 16.0,
-                            //         left: 20,
-                            //         right: 20),
-                            //     child: Row(
-                            //       mainAxisAlignment:
-                            //           MainAxisAlignment.spaceBetween,
-                            //       crossAxisAlignment: CrossAxisAlignment.center,
-                            //       mainAxisSize: MainAxisSize.max,
-                            //       children: [
-                            //         Row(
-                            //           crossAxisAlignment:
-                            //               CrossAxisAlignment.center,
-                            //           mainAxisSize: MainAxisSize.min,
-                            //           children: [
-                            //             CustomIconButton(
-                            //               isRtl: isRtl,
-                            //               height: 56,
-                            //               width: 56,
-                            //               variant:
-                            //                   IconButtonVariant.FillBlueA40019,
-                            //               shape: IconButtonShape.CircleBorder10,
-                            //               padding:
-                            //                   IconButtonPadding.PaddingAll16,
-                            //               child: CommonImageView(
-                            //                 imagePath: ImageConstant.appearence,
-                            //                 color: ColorConstant.blueA400,
-                            //               ),
-                            //             ),
-                            //             HorizontalSpace(width: 16),
-                            //             Text(
-                            //               "Appearance",
-                            //               overflow: TextOverflow.ellipsis,
-                            //               textAlign: TextAlign.start,
-                            //               style: TextStyle(
-                            //                 fontSize: getFontSize(
-                            //                   16,
-                            //                 ),
-                            //                 fontFamily: 'Source Sans Pro',
-                            //                 fontWeight: FontWeight.w600,
-                            //               ),
-                            //             ),
-                            //           ],
-                            //         ),
-                            //         Icon(
-                            //           Icons.arrow_forward_ios_rounded,
-                            //           color: ColorConstant.blueA400,
-                            //           size: getSize(20),
-                            //         )
-                            //       ],
-                            //     ),
-                            //   ),
-                            // ),
-                            // Container(
-                            //   margin: getMargin(
-                            //     left: 24,
-                            //     right: 24,
-                            //   ),
-                            //   child: CustomDivider(isDark: isDark),
-                            // ),
-                            // InkWell(
-                            //   onTap: () {
-                            //     showModalBottomSheet(
-                            //         context: context,
-                            //         isScrollControlled: true,
-                            //         shape: RoundedRectangleBorder(
-                            //             borderRadius: BorderRadius.vertical(
-                            //           top: Radius.circular(24),
-                            //         )),
-                            //         builder: (context) {
-                            //           return ChangeLanguageScreen();
-                            //         });
-                            //   },
-                            //   child: Padding(
-                            //     padding: getPadding(
-                            //         top: 16.0,
-                            //         bottom: 16.0,
-                            //         left: 20,
-                            //         right: 20),
-                            //     child: Row(
-                            //       mainAxisAlignment:
-                            //           MainAxisAlignment.spaceBetween,
-                            //       crossAxisAlignment: CrossAxisAlignment.center,
-                            //       mainAxisSize: MainAxisSize.max,
-                            //       children: [
-                            //         Row(
-                            //           crossAxisAlignment:
-                            //               CrossAxisAlignment.center,
-                            //           mainAxisSize: MainAxisSize.min,
-                            //           children: [
-                            //             CustomIconButton(
-                            //               isRtl: isRtl,
-                            //               height: 56,
-                            //               width: 56,
-                            //               variant:
-                            //                   IconButtonVariant.FillBlueA40019,
-                            //               shape: IconButtonShape.CircleBorder10,
-                            //               padding:
-                            //                   IconButtonPadding.PaddingAll16,
-                            //               child: CommonImageView(
-                            //                 imagePath: ImageConstant.reviews,
-                            //                 color: ColorConstant.blueA400,
-                            //               ),
-                            //             ),
-                            //             HorizontalSpace(width: 16),
-                            //             Text(
-                            //               "Language",
-                            //               overflow: TextOverflow.ellipsis,
-                            //               textAlign: TextAlign.start,
-                            //               style: TextStyle(
-                            //                 fontSize: getFontSize(
-                            //                   16,
-                            //                 ),
-                            //                 fontFamily: 'Source Sans Pro',
-                            //                 fontWeight: FontWeight.w600,
-                            //               ),
-                            //             ),
-                            //           ],
-                            //         ),
-                            //         Icon(
-                            //           Icons.arrow_forward_ios_rounded,
-                            //           color: ColorConstant.blueA400,
-                            //           size: getSize(20),
-                            //         )
-                            //       ],
-                            //     ),
-                            //   ),
-                            // ),
-
-                            Container(
-                              margin: getMargin(
-                                left: 24,
-                                right: 24,
-                              ),
-                              child: CustomDivider(isDark: isDark),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          LightProfileSettingsHelpScreen()),
-                                );
-                              },
-                              child: Padding(
-                                padding: getPadding(
-                                    top: 16.0,
-                                    bottom: 16.0,
-                                    left: 20,
-                                    right: 20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        CustomIconButton(
-                                          // isRtl: isRtl,
-                                          height: 56,
-                                          width: 56,
-                                          variant:
-                                              IconButtonVariant.FillBlueA40019,
-                                          shape: IconButtonShape.CircleBorder10,
-                                          padding:
-                                              IconButtonPadding.PaddingAll16,
-                                          child: CommonImageView(
-                                            imagePath: ImageConstant.help,
-                                            color: ColorConstant.blueA400,
-                                          ),
-                                        ),
-                                        HorizontalSpace(width: 16),
-                                        Text(
-                                          "Help",
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.start,
-                                          style: TextStyle(
-                                            fontSize: getFontSize(
-                                              16,
-                                            ),
-                                            fontFamily: 'Source Sans Pro',
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios_rounded,
-                                      color: ColorConstant.blueA400,
-                                      size: getSize(20),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: getMargin(
-                                left: 24,
-                                right: 24,
-                              ),
-                              child: CustomDivider(isDark: isDark),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          LightProfileSettingsInviteFriendsScreen()),
-                                );
-                              },
-                              child: Padding(
-                                padding: getPadding(
-                                    top: 16.0,
-                                    bottom: 16.0,
-                                    left: 20,
-                                    right: 20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        CustomIconButton(
-                                          // isRtl: isRtl,
-                                          height: 56,
-                                          width: 56,
-                                          variant:
-                                              IconButtonVariant.FillBlueA40019,
-                                          shape: IconButtonShape.CircleBorder10,
-                                          padding:
-                                              IconButtonPadding.PaddingAll16,
-                                          child: CommonImageView(
-                                            imagePath:
-                                                ImageConstant.inviteFriends,
-                                            color: ColorConstant.blueA400,
-                                          ),
-                                        ),
-                                        HorizontalSpace(width: 16),
-                                        Text(
-                                          "Invite Friends",
-                                          overflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.start,
-                                          style: TextStyle(
-                                            fontSize: getFontSize(
-                                              16,
-                                            ),
-                                            fontFamily: 'Source Sans Pro',
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Icon(
-                                      Icons.arrow_forward_ios_rounded,
-                                      color: ColorConstant.blueA400,
-                                      size: getSize(20),
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: getMargin(
-                                left: 24,
-                                right: 24,
-                              ),
-                              child: CustomDivider(isDark: isDark),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                showModalBottomSheet(
-                                    context: context,
-                                    isScrollControlled: true,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.vertical(
-                                      top: Radius.circular(24),
-                                    )),
-                                    builder: (context) {
-                                      return LightProfileSettingsLogoutModalBottomsheet();
-                                    });
-                              },
-                              child: Padding(
-                                padding: getPadding(
-                                  left: 24,
-                                  top: 15,
-                                  bottom: 15,
-                                  right: 24,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
+                    ),
+                  ),
+                  SizedBox(height: 24.h),
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24.w),
+                      child: CustomDivider(isDark: isDark)),
+                  SizedBox(height: 24.h),
+                  FadeInUp(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      LightProfileSettingsNotificationScreen()),
+                            );
+                          },
+                          child: Padding(
+                            padding: getPadding(left: 20, right: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
@@ -707,16 +267,17 @@ class LightProfileSettingsScreen extends StatelessWidget {
                                       // isRtl: isRtl,
                                       height: 56,
                                       width: 56,
-                                      variant: IconButtonVariant.FillRedA40019,
+                                      variant: IconButtonVariant.FillBlueA40019,
                                       shape: IconButtonShape.CircleBorder10,
                                       padding: IconButtonPadding.PaddingAll16,
                                       child: CommonImageView(
-                                        imagePath: ImageConstant.logout,
+                                        imagePath: ImageConstant.notifications,
+                                        color: ColorConstant.blueA400,
                                       ),
                                     ),
                                     HorizontalSpace(width: 16),
                                     Text(
-                                      "Logout",
+                                      "Notification",
                                       overflow: TextOverflow.ellipsis,
                                       textAlign: TextAlign.start,
                                       style: TextStyle(
@@ -729,25 +290,433 @@ class LightProfileSettingsScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                              ),
+                                Icon(
+                                  Icons.arrow_forward_ios_rounded,
+                                  color: ColorConstant.blueA400,
+                                  size: getSize(20),
+                                )
+                              ],
                             ),
-                          ],
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 100.h),
-                      Center(
-                        child: AppSwitchButton(
-                          text: "Switch To Doctor Side",
-                          onPressed: () {
-                            Get.offAll(AddProfileScreen());
+                        SizedBox(height: 16.h),
+                        // CustomDivider(isDark: isDark),
+                        // InkWell(
+                        //   onTap: () {
+                        //     Navigator.push(
+                        //       context,
+                        //       MaterialPageRoute(
+                        //           builder: (context) =>
+                        //               LightProfileSettingsSecurityScreen()),
+                        //     );
+                        //   },
+                        //   child: Padding(
+                        //     padding: getPadding(
+                        //         top: 16.0,
+                        //         bottom: 16.0,
+                        //         left: 20,
+                        //         right: 20),
+                        //     child: Row(
+                        //       mainAxisAlignment:
+                        //           MainAxisAlignment.spaceBetween,
+                        //       crossAxisAlignment: CrossAxisAlignment.center,
+                        //       mainAxisSize: MainAxisSize.max,
+                        //       children: [
+                        //         Row(
+                        //           crossAxisAlignment:
+                        //               CrossAxisAlignment.center,
+                        //           mainAxisSize: MainAxisSize.min,
+                        //           children: [
+                        //             CustomIconButton(
+                        //               isRtl: isRtl,
+                        //               height: 56,
+                        //               width: 56,
+                        //               variant:
+                        //                   IconButtonVariant.FillBlueA40019,
+                        //               shape: IconButtonShape.CircleBorder10,
+                        //               padding:
+                        //                   IconButtonPadding.PaddingAll16,
+                        //               child: CommonImageView(
+                        //                 imagePath: ImageConstant.security,
+                        //                 color: ColorConstant.blueA400,
+                        //               ),
+                        //             ),
+                        //             HorizontalSpace(width: 16),
+                        //             Text(
+                        //               "Security",
+                        //               overflow: TextOverflow.ellipsis,
+                        //               textAlign: TextAlign.start,
+                        //               style: TextStyle(
+                        //                 fontSize: getFontSize(
+                        //                   16,
+                        //                 ),
+                        //                 fontFamily: 'Source Sans Pro',
+                        //                 fontWeight: FontWeight.w600,
+                        //               ),
+                        //             ),
+                        //           ],
+                        //         ),
+                        //         Icon(
+                        //           Icons.arrow_forward_ios_rounded,
+                        //           color: ColorConstant.blueA400,
+                        //           size: getSize(20),
+                        //         )
+                        //       ],
+                        //     ),
+                        //   ),
+                        // ),
+                        // Container(
+                        //   margin: getMargin(
+                        //     left: 24,
+                        //     right: 24,
+                        //   ),
+                        //   child: CustomDivider(isDark: isDark),
+                        // ),
+                        // InkWell(
+                        //   onTap: () {
+                        //     Navigator.push(
+                        //       context,
+                        //       MaterialPageRoute(
+                        //           builder: (context) =>
+                        //               LightProfileSettingsAppearanceScreen()),
+                        //     );
+                        //   },
+                        //   child: Padding(
+                        //     padding: getPadding(
+                        //         top: 16.0,
+                        //         bottom: 16.0,
+                        //         left: 20,
+                        //         right: 20),
+                        //     child: Row(
+                        //       mainAxisAlignment:
+                        //           MainAxisAlignment.spaceBetween,
+                        //       crossAxisAlignment: CrossAxisAlignment.center,
+                        //       mainAxisSize: MainAxisSize.max,
+                        //       children: [
+                        //         Row(
+                        //           crossAxisAlignment:
+                        //               CrossAxisAlignment.center,
+                        //           mainAxisSize: MainAxisSize.min,
+                        //           children: [
+                        //             CustomIconButton(
+                        //               isRtl: isRtl,
+                        //               height: 56,
+                        //               width: 56,
+                        //               variant:
+                        //                   IconButtonVariant.FillBlueA40019,
+                        //               shape: IconButtonShape.CircleBorder10,
+                        //               padding:
+                        //                   IconButtonPadding.PaddingAll16,
+                        //               child: CommonImageView(
+                        //                 imagePath: ImageConstant.appearence,
+                        //                 color: ColorConstant.blueA400,
+                        //               ),
+                        //             ),
+                        //             HorizontalSpace(width: 16),
+                        //             Text(
+                        //               "Appearance",
+                        //               overflow: TextOverflow.ellipsis,
+                        //               textAlign: TextAlign.start,
+                        //               style: TextStyle(
+                        //                 fontSize: getFontSize(
+                        //                   16,
+                        //                 ),
+                        //                 fontFamily: 'Source Sans Pro',
+                        //                 fontWeight: FontWeight.w600,
+                        //               ),
+                        //             ),
+                        //           ],
+                        //         ),
+                        //         Icon(
+                        //           Icons.arrow_forward_ios_rounded,
+                        //           color: ColorConstant.blueA400,
+                        //           size: getSize(20),
+                        //         )
+                        //       ],
+                        //     ),
+                        //   ),
+                        // ),
+                        // Container(
+                        //   margin: getMargin(
+                        //     left: 24,
+                        //     right: 24,
+                        //   ),
+                        //   child: CustomDivider(isDark: isDark),
+                        // ),
+                        // InkWell(
+                        //   onTap: () {
+                        //     showModalBottomSheet(
+                        //         context: context,
+                        //         isScrollControlled: true,
+                        //         shape: RoundedRectangleBorder(
+                        //             borderRadius: BorderRadius.vertical(
+                        //           top: Radius.circular(24),
+                        //         )),
+                        //         builder: (context) {
+                        //           return ChangeLanguageScreen();
+                        //         });
+                        //   },
+                        //   child: Padding(
+                        //     padding: getPadding(
+                        //         top: 16.0,
+                        //         bottom: 16.0,
+                        //         left: 20,
+                        //         right: 20),
+                        //     child: Row(
+                        //       mainAxisAlignment:
+                        //           MainAxisAlignment.spaceBetween,
+                        //       crossAxisAlignment: CrossAxisAlignment.center,
+                        //       mainAxisSize: MainAxisSize.max,
+                        //       children: [
+                        //         Row(
+                        //           crossAxisAlignment:
+                        //               CrossAxisAlignment.center,
+                        //           mainAxisSize: MainAxisSize.min,
+                        //           children: [
+                        //             CustomIconButton(
+                        //               isRtl: isRtl,
+                        //               height: 56,
+                        //               width: 56,
+                        //               variant:
+                        //                   IconButtonVariant.FillBlueA40019,
+                        //               shape: IconButtonShape.CircleBorder10,
+                        //               padding:
+                        //                   IconButtonPadding.PaddingAll16,
+                        //               child: CommonImageView(
+                        //                 imagePath: ImageConstant.reviews,
+                        //                 color: ColorConstant.blueA400,
+                        //               ),
+                        //             ),
+                        //             HorizontalSpace(width: 16),
+                        //             Text(
+                        //               "Language",
+                        //               overflow: TextOverflow.ellipsis,
+                        //               textAlign: TextAlign.start,
+                        //               style: TextStyle(
+                        //                 fontSize: getFontSize(
+                        //                   16,
+                        //                 ),
+                        //                 fontFamily: 'Source Sans Pro',
+                        //                 fontWeight: FontWeight.w600,
+                        //               ),
+                        //             ),
+                        //           ],
+                        //         ),
+                        //         Icon(
+                        //           Icons.arrow_forward_ios_rounded,
+                        //           color: ColorConstant.blueA400,
+                        //           size: getSize(20),
+                        //         )
+                        //       ],
+                        //     ),
+                        //   ),
+                        // ),
+
+                        Container(
+                          margin: getMargin(
+                            left: 24,
+                            right: 24,
+                          ),
+                          child: CustomDivider(isDark: isDark),
+                        ),
+                        SizedBox(height: 16),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      LightProfileSettingsHelpScreen()),
+                            );
                           },
+                          child: Padding(
+                            padding: getPadding(left: 20, right: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    CustomIconButton(
+                                      // isRtl: isRtl,
+                                      height: 56,
+                                      width: 56,
+                                      variant: IconButtonVariant.FillBlueA40019,
+                                      shape: IconButtonShape.CircleBorder10,
+                                      padding: IconButtonPadding.PaddingAll16,
+                                      child: CommonImageView(
+                                        imagePath: ImageConstant.help,
+                                        color: ColorConstant.blueA400,
+                                      ),
+                                    ),
+                                    HorizontalSpace(width: 16),
+                                    Text(
+                                      "Help",
+                                      overflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.start,
+                                      style: TextStyle(
+                                        fontSize: getFontSize(
+                                          16,
+                                        ),
+                                        fontFamily: 'Source Sans Pro',
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Icon(
+                                  Icons.arrow_forward_ios_rounded,
+                                  color: ColorConstant.blueA400,
+                                  size: getSize(20),
+                                )
+                              ],
+                            ),
+                          ),
                         ),
-                      ),
-                    ],
+                        SizedBox(height: 16),
+                        Container(
+                          margin: getMargin(
+                            left: 24,
+                            right: 24,
+                          ),
+                          child: CustomDivider(isDark: isDark),
+                        ),
+                        SizedBox(height: 16),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      LightProfileSettingsInviteFriendsScreen()),
+                            );
+                          },
+                          child: Padding(
+                            padding: getPadding(left: 20, right: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    CustomIconButton(
+                                      // isRtl: isRtl,
+                                      height: 56,
+                                      width: 56,
+                                      variant: IconButtonVariant.FillBlueA40019,
+                                      shape: IconButtonShape.CircleBorder10,
+                                      padding: IconButtonPadding.PaddingAll16,
+                                      child: CommonImageView(
+                                        imagePath: ImageConstant.inviteFriends,
+                                        color: ColorConstant.blueA400,
+                                      ),
+                                    ),
+                                    HorizontalSpace(width: 16),
+                                    Text(
+                                      "Invite Friends",
+                                      overflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.start,
+                                      style: TextStyle(
+                                        fontSize: getFontSize(
+                                          16,
+                                        ),
+                                        fontFamily: 'Source Sans Pro',
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Icon(
+                                  Icons.arrow_forward_ios_rounded,
+                                  color: ColorConstant.blueA400,
+                                  size: getSize(20),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 16),
+                        Container(
+                          margin: getMargin(
+                            left: 24,
+                            right: 24,
+                          ),
+                          child: CustomDivider(isDark: isDark),
+                        ),
+                        SizedBox(height: 16),
+                        InkWell(
+                          onTap: () {
+                            showModalBottomSheet(
+                                context: context,
+                                isScrollControlled: true,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.vertical(
+                                  top: Radius.circular(24),
+                                )),
+                                builder: (context) {
+                                  return LightProfileSettingsLogoutModalBottomsheet();
+                                });
+                          },
+                          child: Padding(
+                            padding: getPadding(
+                              left: 24,
+                              right: 24,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                CustomIconButton(
+                                  // isRtl: isRtl,
+                                  height: 56,
+                                  width: 56,
+                                  variant: IconButtonVariant.FillRedA40019,
+                                  shape: IconButtonShape.CircleBorder10,
+                                  padding: IconButtonPadding.PaddingAll16,
+                                  child: CommonImageView(
+                                    imagePath: ImageConstant.logout,
+                                  ),
+                                ),
+                                HorizontalSpace(width: 16),
+                                Text(
+                                  "Logout",
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontSize: getFontSize(
+                                      16,
+                                    ),
+                                    fontFamily: 'Source Sans Pro',
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
+            Spacer(),
+            Center(
+              child: AppSwitchButton(
+                text: "Switch To Doctor Side",
+                onPressed: () {
+                  Get.offAll(AddProfileScreen());
+                },
+              ),
+            ),
+            SizedBox(height: 60.h)
           ],
         ),
       ),

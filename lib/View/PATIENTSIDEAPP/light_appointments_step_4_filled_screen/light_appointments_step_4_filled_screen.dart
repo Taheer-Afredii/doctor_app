@@ -1,4 +1,3 @@
-import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_step_2_filled_screen/light_appointments_step_2_filled_screen.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_success_video_call_dialog/light_appointments_success_video_call_dialog.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_success_voice_call_dialog/light_appointments_success_voice_call_dialog.dart';
 import 'package:doctorq/View/TestEnumFile.dart';
@@ -442,7 +441,7 @@ class LightAppointmentsStep4FilledScreen extends StatelessWidget {
                                   alignment: Alignment.centerLeft,
                                   child: Padding(
                                     padding: getPadding(
-                                      left: 15,
+                                      left: 28,
                                       top: 1,
                                       right: 24,
                                     ),
@@ -558,7 +557,7 @@ class LightAppointmentsStep4FilledScreen extends StatelessWidget {
                                   alignment: Alignment.centerLeft,
                                   child: Padding(
                                     padding: getPadding(
-                                      left: 15,
+                                      left: 28,
                                       top: 1,
                                       right: 24,
                                     ),
@@ -681,7 +680,7 @@ class LightAppointmentsStep4FilledScreen extends StatelessWidget {
                                         alignment: Alignment.centerLeft,
                                         child: Padding(
                                           padding: getPadding(
-                                            left: 15,
+                                            left: 28,
                                             top: 1,
                                             right: 24,
                                           ),
@@ -796,7 +795,7 @@ class LightAppointmentsStep4FilledScreen extends StatelessWidget {
                                         alignment: Alignment.centerLeft,
                                         child: Padding(
                                           padding: getPadding(
-                                            left: 15,
+                                            left: 28,
                                             top: 1,
                                             right: 24,
                                           ),

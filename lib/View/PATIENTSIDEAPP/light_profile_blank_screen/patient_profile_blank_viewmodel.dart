@@ -1,40 +1,14 @@
 import 'dart:io';
 
+import 'package:doctorq/View/PATIENTSIDEAPP/light_profile_settings_screen/change_language.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-class AddProfileScreenViewModel extends ChangeNotifier {
-  final TextEditingController nameController = TextEditingController();
-  Object? genderDropDownVal;
-  Object? specDropDownVal;
-  Object? expDropDownVal;
+class PatientProfileBlankViewmodel extends ChangeNotifier {
   List<String> genderDropdownItemList = ["Male", "Female"];
-  List<String> specDropdownItemList = ["Ayurvedic", "Homeopathic"];
-  List<String> expDropdownItemList = [
-    "1 Year",
-    "2 Year",
-    "3 Year",
-    "4 Year",
-    "5 Year",
-    "6 Year",
-    "7 Year",
-    "8 Year",
-    "9 Year",
-    "10 Year"
-  ];
-
+  Object? genderDropDownVal;
   getGenderDropDownVal(val) {
     genderDropDownVal = val;
-    notifyListeners();
-  }
-
-  getSpecDropDownVal(val) {
-    specDropDownVal = val;
-    notifyListeners();
-  }
-
-  getExpDropDownVal(val) {
-    expDropDownVal = val;
     notifyListeners();
   }
 

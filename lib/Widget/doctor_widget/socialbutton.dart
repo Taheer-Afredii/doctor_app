@@ -1,12 +1,12 @@
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SocialButton extends StatelessWidget {
-  VoidCallback? onPressed;
-  String image;
-  String? title;
+  final VoidCallback? onPressed;
+  final String image;
+  final String? title;
   SocialButton({
     required this.image,
     this.title,

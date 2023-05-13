@@ -2,8 +2,8 @@ import 'package:doctorq/View/DOCTORSIDEAPP/CongratsScreen/congrats_screen.dart';
 import 'package:doctorq/View/DOCTORSIDEAPP/SetPricingScreen/setpricingviewmodel.dart';
 import 'package:doctorq/Widget/doctor_widget/appbutton.dart';
 import 'package:doctorq/Widget/doctor_widget/appheading_row.dart';
-import 'package:doctorq/core/constants/doctor_side_colors.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
+import 'package:doctorq/core/utils/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -50,7 +50,7 @@ class SetPricingcreen extends StatelessWidget {
               ),
               SizedBox(height: 16.h),
               PriceScreenMainWidget(
-                heading: "Vedio Call",
+                heading: "Video Call",
                 subheading: "Can make a video call with doctor",
                 price: model.videoCallPrice,
                 icon: Icons.videocam_rounded,
@@ -66,11 +66,13 @@ class SetPricingcreen extends StatelessWidget {
                       },
               ),
               const Spacer(),
-              AppButton(
-                onPressed: () {
-                  Get.to(() => const CongratsScreen());
-                },
-                text: "Confirm",
+              Center(
+                child: AppButton(
+                  onPressed: () {
+                    Get.to(() => const CongratsScreen());
+                  },
+                  text: "Confirm",
+                ),
               ),
               SizedBox(height: 48.h),
             ],
@@ -82,12 +84,12 @@ class SetPricingcreen extends StatelessWidget {
 }
 
 class PriceScreenMainWidget extends StatelessWidget {
-  String heading;
-  String subheading;
-  String price;
-  IconData icon;
-  VoidCallback increment;
-  VoidCallback decrement;
+  final String heading;
+  final String subheading;
+  final String price;
+  final IconData icon;
+  final VoidCallback increment;
+  final VoidCallback decrement;
 
   PriceScreenMainWidget({
     super.key,

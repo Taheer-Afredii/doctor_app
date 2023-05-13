@@ -208,86 +208,83 @@ class _LightAppointmentsStep2FilledScreenState
                         ),
                       ),
                     ),
-                    Container(
-                      height: getVerticalSize(240),
-                      child: GridView.builder(
-                        padding: getPadding(
-                          left: 20,
-                          top: 10,
-                          right: 20,
+                    GridView.builder(
+                      padding: getPadding(
+                        left: 20,
+                        top: 10,
+                        right: 20,
+                      ),
+                      physics: BouncingScrollPhysics(),
+                      shrinkWrap: true,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        childAspectRatio: 2.767,
+                        // mainAxisExtent: getVerticalSize(
+                        //   158.00,
+                        // ),
+                        crossAxisCount: 3,
+                        mainAxisSpacing: getHorizontalSize(
+                          10.00,
                         ),
-                        physics: BouncingScrollPhysics(),
-                        shrinkWrap: true,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          childAspectRatio: 2.767,
-                          // mainAxisExtent: getVerticalSize(
-                          //   158.00,
-                          // ),
-                          crossAxisCount: 3,
-                          mainAxisSpacing: getHorizontalSize(
-                            10.00,
-                          ),
-                          crossAxisSpacing: getHorizontalSize(
-                            10.00,
-                          ),
+                        crossAxisSpacing: getHorizontalSize(
+                          10.00,
                         ),
-                        itemCount: availableTimesList.length,
-                        itemBuilder: (context, index) {
-                          return InkWell(
-                            onTap: () {
-                              setState(() {
-                                selectedTime = index;
-                              });
-                            },
-                            child: Container(
-                              padding: getPadding(
-                                left: 20,
-                                top: 8,
-                                right: 20,
-                                bottom: 8,
-                              ),
-                              decoration: BoxDecoration(
-                                color: selectedTime == index
-                                    ? ColorConstant.blueA400
-                                    : Colors.transparent,
-                                borderRadius: BorderRadius.circular(
-                                  getHorizontalSize(
-                                    21.50,
-                                  ),
-                                ),
-                                border: Border.all(
-                                  color: ColorConstant.blueA400,
-                                  width: getHorizontalSize(
-                                    2.00,
-                                  ),
+                      ),
+                      itemCount: availableTimesList.length,
+                      itemBuilder: (context, index) {
+                        return InkWell(
+                          onTap: () {
+                            setState(() {
+                              selectedTime = index;
+                            });
+                          },
+                          child: Container(
+                            padding: getPadding(
+                              left: 20,
+                              top: 8,
+                              right: 20,
+                              bottom: 8,
+                            ),
+                            decoration: BoxDecoration(
+                              color: selectedTime == index
+                                  ? ColorConstant.blueA400
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(
+                                getHorizontalSize(
+                                  21.50,
                                 ),
                               ),
-                              child: Text(
-                                availableTimesList[index],
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: selectedTime == index
-                                      ? Colors.white
-                                      : ColorConstant.blueA400,
-                                  fontSize: getFontSize(
-                                    18,
-                                  ),
-                                  fontFamily: 'Source Sans Pro',
-                                  fontWeight: FontWeight.w600,
+                              border: Border.all(
+                                color: ColorConstant.blueA400,
+                                width: getHorizontalSize(
+                                  2.00,
                                 ),
                               ),
                             ),
-                          );
-                        },
-                      ),
+                            child: Text(
+                              availableTimesList[index],
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: selectedTime == index
+                                    ? Colors.white
+                                    : ColorConstant.blueA400,
+                                fontSize: getFontSize(
+                                  18,
+                                ),
+                                fontFamily: 'Source Sans Pro',
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
                         padding: getPadding(
                           left: 20,
-                          top: 20,
+                          top: 40,
                           right: 20,
                         ),
                         child: Text(
