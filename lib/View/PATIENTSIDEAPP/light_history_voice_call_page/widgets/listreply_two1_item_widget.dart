@@ -6,7 +6,7 @@ import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/data/doctors_list.dart';
 import 'package:flutter/material.dart';
 
-import '../../light_history_voice_call_details_screen/light_history_voice_call_details_screen.dart';
+import '../../Patient_History_Screen/patient_history_voice_call_details_screen/patient_history_voice_call_details_screen.dart';
 
 // ignore: must_be_immutable
 class ListreplyTwo1ItemWidget extends StatelessWidget {
@@ -18,7 +18,7 @@ class ListreplyTwo1ItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     // bool isRtl = context.locale == Constants.arLocal;
-    bool isRtl = false;
+    // bool isRtl = false;
     return Align(
       alignment: Alignment.center,
       child: InkWell(
@@ -30,9 +30,7 @@ class ListreplyTwo1ItemWidget extends StatelessWidget {
         onTap: () {
           Navigator.of(context, rootNavigator: true).push(
             MaterialPageRoute(
-                builder: (context) => LightHistoryVoiceCallDetailsScreen(
-                      doctor: doctorList[index],
-                    )),
+                builder: (context) => PatientHistoryVoiceCallDetailsScreen()),
           );
         },
         child: Container(
@@ -72,50 +70,26 @@ class ListreplyTwo1ItemWidget extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: ClipRRect(
                         borderRadius: BorderRadius.only(
-                          topLeft: isRtl
-                              ? Radius.circular(
-                                  getHorizontalSize(
-                                    0.00,
-                                  ),
-                                )
-                              : Radius.circular(
-                                  getHorizontalSize(
-                                    12.00,
-                                  ),
-                                ),
-                          bottomLeft: isRtl
-                              ? Radius.circular(
-                                  getHorizontalSize(
-                                    0.00,
-                                  ),
-                                )
-                              : Radius.circular(
-                                  getHorizontalSize(
-                                    12.00,
-                                  ),
-                                ),
-                          bottomRight: isRtl
-                              ? Radius.circular(
-                                  getHorizontalSize(
-                                    12.00,
-                                  ),
-                                )
-                              : Radius.circular(
-                                  getHorizontalSize(
-                                    0.00,
-                                  ),
-                                ),
-                          topRight: isRtl
-                              ? Radius.circular(
-                                  getHorizontalSize(
-                                    12.00,
-                                  ),
-                                )
-                              : Radius.circular(
-                                  getHorizontalSize(
-                                    0.00,
-                                  ),
-                                ),
+                          topLeft: Radius.circular(
+                            getHorizontalSize(
+                              12.00,
+                            ),
+                          ),
+                          bottomLeft: Radius.circular(
+                            getHorizontalSize(
+                              12.00,
+                            ),
+                          ),
+                          bottomRight: Radius.circular(
+                            getHorizontalSize(
+                              0.00,
+                            ),
+                          ),
+                          topRight: Radius.circular(
+                            getHorizontalSize(
+                              0.00,
+                            ),
+                          ),
                         ),
                         child: CommonImageView(
                           imagePath: doctorList[index].img,
@@ -138,8 +112,7 @@ class ListreplyTwo1ItemWidget extends StatelessWidget {
                       ),
                       variant: IconButtonVariant.OutlineIndigoA20014_1,
                       shape: IconButtonShape.CustomBorderTL12,
-                      alignment:
-                          isRtl ? Alignment.bottomLeft : Alignment.bottomRight,
+                      alignment: Alignment.bottomRight,
                       child:
                           Image.asset(ImageConstant.call, color: Colors.white),
                     ),
@@ -254,8 +227,7 @@ class ListreplyTwo1ItemWidget extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: getMargin(
-                            left: isRtl ? 20 : 0, right: isRtl ? 0 : 20),
+                        margin: getMargin(left: 0, right: 20),
                         padding: getPadding(all: 10),
                         height: getVerticalSize(44),
                         width: getHorizontalSize(44),

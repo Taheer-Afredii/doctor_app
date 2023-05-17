@@ -30,8 +30,8 @@ class _LightSignUpBlankScreenState extends State<LightSignUpBlankScreen> {
   @override
   Widget build(BuildContext context) {
     PatientSignInViewModel model = Provider.of<PatientSignInViewModel>(context);
-    bool isDark = Theme.of(context).brightness == Brightness.dark;
-    bool isRtl = false;
+    // bool isDark = Theme.of(context).brightness == Brightness.dark;
+    // bool isRtl = false;
     return Scaffold(
       body: SafeArea(
         child: Container(

@@ -11,10 +11,15 @@ import 'package:doctorq/View/DOCTORSIDEAPP/ProfileSettingScreen.dart/profilesett
 import 'package:doctorq/View/DOCTORSIDEAPP/SetPricingScreen/setpricingviewmodel.dart';
 import 'package:doctorq/View/DOCTORSIDEAPP/SignInScreen/signinscreen_viewmodel.dart';
 import 'package:doctorq/View/DOCTORSIDEAPP/SignupScreen/signupscreen_viewmodel.dart';
-import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_book_screen/appointment_book_screen_viewmodel.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/PatientAppointment_TimeSelection/patient_appointments_time_selection_viewmodel.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/Patient_Appointment_screen/patient_appointment_viewmodel.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/Patient_History_Screen/patient_history_screen_viewmodel.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_list_upcoming_page/doctor_appoint_viewmodel.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/light_home_favorite_doctor_screen/favourite_doctor_viewmodel.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/light_profile_blank_screen/patient_profile_blank_viewmodel.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/light_reset_password_screen/reset_password_viewmodel.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/light_sign_up_blank_screen/patient_sign_up_viewmodel.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/patient_appointments_book_screen/patient_appointment_book_screen_viewmodel.dart';
 import 'package:doctorq/core/theme/theme_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
@@ -36,7 +41,14 @@ List<SingleChildWidget> providers = [
   ChangeNotifierProvider(create: (_) => AppearanceSettingViewModel()),
   ChangeNotifierProvider(create: (_) => SetTimeSettingViewModel()),
   ChangeNotifierProvider(create: (_) => SetPriceSettingViewModel()),
-  ChangeNotifierProvider(create: (_) => AppointmentBookScreenViewModel()),
+  ChangeNotifierProvider(
+      create: (_) => PatientAppointmentBookScreenViewModel()),
   ChangeNotifierProvider(create: (_) => PatientProfileBlankViewmodel()),
   ChangeNotifierProvider(create: (_) => ResetPasswordViewmodel()),
+  ChangeNotifierProvider(create: (_) => FavouriteDoctorViewModel()),
+  ChangeNotifierProvider(create: (_) => DoctorAppointViewModel()),
+  ChangeNotifierProvider(
+      create: (_) => PatientAppointmentTimeSelectionViewModel()),
+  ChangeNotifierProvider(create: (_) => PatientAppointmentViewmodel()),
+  ChangeNotifierProvider(create: (_) => PatientHistoryScreenViewModel()),
 ];

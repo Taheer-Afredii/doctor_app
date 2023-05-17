@@ -23,7 +23,7 @@ class _Listfullname1ItemWidgetState extends State<Listfullname1ItemWidget> {
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-    bool isRtl = false;
+    // bool isRtl = false;
     return Container(
       margin: getMargin(
         top: 8.0,
@@ -158,8 +158,8 @@ class _Listfullname1ItemWidgetState extends State<Listfullname1ItemWidget> {
                 ),
                 Padding(
                   padding: getPadding(
-                    left: isRtl ? 20 : 0,
-                    right: isRtl ? 0 : 20,
+                    left: 0,
+                    right: 20,
                   ),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(12),

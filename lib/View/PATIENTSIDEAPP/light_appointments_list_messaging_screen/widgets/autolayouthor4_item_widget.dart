@@ -10,7 +10,7 @@ class Autolayouthor4ItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isRtl = false;
+    // bool isRtl = false;
     return IntrinsicWidth(
       child: Align(
         alignment: Alignment.center,

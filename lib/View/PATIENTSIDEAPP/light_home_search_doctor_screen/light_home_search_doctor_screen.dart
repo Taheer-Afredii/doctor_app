@@ -23,7 +23,7 @@ class _LightHomeSearchDoctorScreenState
   int selectIndex = 0;
   @override
   void initState() {
-    // TODO: implement initState
+    //
     super.initState();
     tabController = tabController = TabController(length: 8, vsync: this);
     autoLayoutVerController.text = 'Dr.';
@@ -31,7 +31,6 @@ class _LightHomeSearchDoctorScreenState
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     tabController!.dispose();
   }

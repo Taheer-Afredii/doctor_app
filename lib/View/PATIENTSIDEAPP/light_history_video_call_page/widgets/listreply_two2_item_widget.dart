@@ -16,7 +16,7 @@ class ListreplyTwo2ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-    bool isRtl = false;
+    // bool isRtl = false;
     return Align(
       alignment: Alignment.center,
       child: InkWell(
@@ -70,50 +70,16 @@ class ListreplyTwo2ItemWidget extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: ClipRRect(
                         borderRadius: BorderRadius.only(
-                          topLeft: isRtl
-                              ? Radius.circular(
-                                  getHorizontalSize(
-                                    0.00,
-                                  ),
-                                )
-                              : Radius.circular(
-                                  getHorizontalSize(
-                                    12.00,
-                                  ),
-                                ),
-                          bottomLeft: isRtl
-                              ? Radius.circular(
-                                  getHorizontalSize(
-                                    0.00,
-                                  ),
-                                )
-                              : Radius.circular(
-                                  getHorizontalSize(
-                                    12.00,
-                                  ),
-                                ),
-                          bottomRight: isRtl
-                              ? Radius.circular(
-                                  getHorizontalSize(
-                                    12.00,
-                                  ),
-                                )
-                              : Radius.circular(
-                                  getHorizontalSize(
-                                    0.00,
-                                  ),
-                                ),
-                          topRight: isRtl
-                              ? Radius.circular(
-                                  getHorizontalSize(
-                                    12.00,
-                                  ),
-                                )
-                              : Radius.circular(
-                                  getHorizontalSize(
-                                    0.00,
-                                  ),
-                                ),
+                          topLeft: Radius.circular(
+                            getHorizontalSize(
+                              12.00,
+                            ),
+                          ),
+                          bottomLeft: Radius.circular(
+                            getHorizontalSize(
+                              12.00,
+                            ),
+                          ),
                         ),
                         child: CommonImageView(
                           imagePath: doctorList[index].img,
@@ -136,8 +102,7 @@ class ListreplyTwo2ItemWidget extends StatelessWidget {
                       ),
                       variant: IconButtonVariant.OutlineIndigoA20014_1,
                       shape: IconButtonShape.CustomBorderTL12,
-                      alignment:
-                          isRtl ? Alignment.bottomLeft : Alignment.bottomRight,
+                      alignment: Alignment.bottomRight,
                       child: Image.asset(ImageConstant.videocam,
                           color: Colors.white),
                     ),
@@ -252,8 +217,7 @@ class ListreplyTwo2ItemWidget extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: getMargin(
-                            left: isRtl ? 20 : 0, right: isRtl ? 0 : 20),
+                        margin: getMargin(left: 0, right: 20),
                         padding: getPadding(all: 10),
                         height: getVerticalSize(44),
                         width: getHorizontalSize(44),

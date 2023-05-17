@@ -7,7 +7,7 @@ import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
 class LightAppointmentsFailedMessagingDialog extends StatelessWidget {
-  CallType callTypes;
+  final CallType callTypes;
   LightAppointmentsFailedMessagingDialog({required this.callTypes});
   @override
   Widget build(BuildContext context) {

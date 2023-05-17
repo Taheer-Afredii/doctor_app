@@ -23,14 +23,14 @@ class _ListdarrellstewardItemWidgetState
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
     // bool isRtl = context.locale == Constants.arLocal;
-    bool isRtl = false;
+    // bool isRtl = false;
     return Align(
       alignment: Alignment.topCenter,
       child: Container(
         height: getVerticalSize(80),
         padding: getPadding(
-          left: isRtl ? 20 : 0,
-          right: isRtl ? 0 : 20,
+          left: 0,
+          right: 20,
         ),
         margin: getMargin(
           top: 12.0,
@@ -56,50 +56,26 @@ class _ListdarrellstewardItemWidgetState
           children: [
             ClipRRect(
               borderRadius: BorderRadius.only(
-                topLeft: isRtl
-                    ? Radius.circular(
-                        getHorizontalSize(
-                          0.00,
-                        ),
-                      )
-                    : Radius.circular(
-                        getHorizontalSize(
-                          12.00,
-                        ),
-                      ),
-                bottomLeft: isRtl
-                    ? Radius.circular(
-                        getHorizontalSize(
-                          0.00,
-                        ),
-                      )
-                    : Radius.circular(
-                        getHorizontalSize(
-                          12.00,
-                        ),
-                      ),
-                bottomRight: isRtl
-                    ? Radius.circular(
-                        getHorizontalSize(
-                          12.00,
-                        ),
-                      )
-                    : Radius.circular(
-                        getHorizontalSize(
-                          0.00,
-                        ),
-                      ),
-                topRight: isRtl
-                    ? Radius.circular(
-                        getHorizontalSize(
-                          12.00,
-                        ),
-                      )
-                    : Radius.circular(
-                        getHorizontalSize(
-                          0.00,
-                        ),
-                      ),
+                topLeft: Radius.circular(
+                  getHorizontalSize(
+                    12.00,
+                  ),
+                ),
+                bottomLeft: Radius.circular(
+                  getHorizontalSize(
+                    12.00,
+                  ),
+                ),
+                bottomRight: Radius.circular(
+                  getHorizontalSize(
+                    0.00,
+                  ),
+                ),
+                topRight: Radius.circular(
+                  getHorizontalSize(
+                    0.00,
+                  ),
+                ),
               ),
               child: CommonImageView(
                 imagePath: friendsList[widget.index].img,

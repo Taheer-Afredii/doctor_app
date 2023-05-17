@@ -4,19 +4,18 @@ import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
-import 'package:doctorq/models/appointments_model.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_list_voice_call_ringing_screen/light_appointments_list_voice_call_ringing_screen.dart';
+import 'package:doctorq/models/appointment_model.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class LightAppointmentsListMessagingScreen extends StatelessWidget {
-  AppointmentsModel appointment;
+  MyAppointmentModel appointment;
   LightAppointmentsListMessagingScreen({required this.appointment});
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-    bool isRtl = false;
+    // bool isRtl = false;
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -99,61 +98,35 @@ class LightAppointmentsListMessagingScreen extends StatelessWidget {
                               100.00,
                             ),
                             child: Stack(
-                              alignment: isRtl
-                                  ? Alignment.bottomLeft
-                                  : Alignment.bottomRight,
+                              alignment: Alignment.bottomRight,
                               children: [
                                 Align(
                                   alignment: Alignment.centerLeft,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.only(
-                                      topLeft: isRtl
-                                          ? Radius.circular(
-                                              getHorizontalSize(
-                                                0.00,
-                                              ),
-                                            )
-                                          : Radius.circular(
-                                              getHorizontalSize(
-                                                12.00,
-                                              ),
-                                            ),
-                                      bottomLeft: isRtl
-                                          ? Radius.circular(
-                                              getHorizontalSize(
-                                                0.00,
-                                              ),
-                                            )
-                                          : Radius.circular(
-                                              getHorizontalSize(
-                                                12.00,
-                                              ),
-                                            ),
-                                      bottomRight: isRtl
-                                          ? Radius.circular(
-                                              getHorizontalSize(
-                                                12.00,
-                                              ),
-                                            )
-                                          : Radius.circular(
-                                              getHorizontalSize(
-                                                0.00,
-                                              ),
-                                            ),
-                                      topRight: isRtl
-                                          ? Radius.circular(
-                                              getHorizontalSize(
-                                                12.00,
-                                              ),
-                                            )
-                                          : Radius.circular(
-                                              getHorizontalSize(
-                                                0.00,
-                                              ),
-                                            ),
+                                      topLeft: Radius.circular(
+                                        getHorizontalSize(
+                                          12.00,
+                                        ),
+                                      ),
+                                      bottomLeft: Radius.circular(
+                                        getHorizontalSize(
+                                          12.00,
+                                        ),
+                                      ),
+                                      bottomRight: Radius.circular(
+                                        getHorizontalSize(
+                                          0.00,
+                                        ),
+                                      ),
+                                      topRight: Radius.circular(
+                                        getHorizontalSize(
+                                          0.00,
+                                        ),
+                                      ),
                                     ),
                                     child: CommonImageView(
-                                      imagePath: appointment.img,
+                                      imagePath: appointment.picture,
                                       height: getSize(
                                         100.00,
                                       ),
@@ -174,12 +147,13 @@ class LightAppointmentsListMessagingScreen extends StatelessWidget {
                                   variant:
                                       IconButtonVariant.OutlineIndigoA20014_1,
                                   shape: IconButtonShape.CustomBorderTL12,
-                                  alignment: isRtl
-                                      ? Alignment.bottomLeft
-                                      : Alignment.bottomRight,
-                                  child: Image.asset(
-                                      appointment.contactMethodIcon,
-                                      color: Colors.white),
+                                  alignment: Alignment.bottomRight,
+                                  child: Icon(
+                                    appointment.iconData,
+                                    size: getSize(
+                                      20.00,
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
@@ -202,7 +176,7 @@ class LightAppointmentsListMessagingScreen extends StatelessWidget {
                                           MainAxisAlignment.start,
                                       children: [
                                         Text(
-                                          appointment.name,
+                                          appointment.name!,
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.start,
                                           style: TextStyle(
@@ -225,15 +199,7 @@ class LightAppointmentsListMessagingScreen extends StatelessWidget {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Text(
-                                                appointment.contactMethodIcon ==
-                                                        ImageConstant.call
-                                                    ? 'VoiceCall'
-                                                    : appointment
-                                                                .contactMethodIcon ==
-                                                            ImageConstant
-                                                                .videocam
-                                                        ? 'VideoCall'
-                                                        : 'Message',
+                                                'Message',
                                                 overflow: TextOverflow.ellipsis,
                                                 textAlign: TextAlign.start,
                                                 style: TextStyle(
@@ -270,7 +236,7 @@ class LightAppointmentsListMessagingScreen extends StatelessWidget {
                                                   bottom: 1,
                                                 ),
                                                 child: Text(
-                                                  appointment.status,
+                                                  appointment.status!,
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.start,
@@ -300,7 +266,7 @@ class LightAppointmentsListMessagingScreen extends StatelessWidget {
                                             top: 3,
                                           ),
                                           child: Text(
-                                            appointment.time,
+                                            appointment.startTime!,
                                             overflow: TextOverflow.ellipsis,
                                             textAlign: TextAlign.start,
                                             style: TextStyle(
@@ -316,22 +282,18 @@ class LightAppointmentsListMessagingScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Container(
-                                    margin: getMargin(
-                                        left: isRtl ? 20 : 0,
-                                        right: isRtl ? 0 : 20),
-                                    padding: getPadding(all: 10),
-                                    height: getVerticalSize(44),
-                                    width: getHorizontalSize(44),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(12),
-                                      color: ColorConstant.blueA400
-                                          .withOpacity(0.1),
-                                    ),
-                                    child: CommonImageView(
-                                        imagePath:
-                                            appointment.contactMethodIcon,
-                                        color: ColorConstant.blueA400),
-                                  ),
+                                      margin: getMargin(left: 0, right: 20),
+                                      padding: getPadding(all: 10),
+                                      height: getVerticalSize(44),
+                                      width: getHorizontalSize(44),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        color: ColorConstant.blueA400
+                                            .withOpacity(0.1),
+                                      ),
+                                      child: Icon(appointment.iconData,
+                                          color: ColorConstant.blueA400,
+                                          size: getSize(20))),
                                 ],
                               ),
                             ),
@@ -840,14 +802,12 @@ class LightAppointmentsListMessagingScreen extends StatelessWidget {
                         bottom: 20,
                       ),
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  LightAppointmentsListVoiceCallRingingScreen(
-                                    appointment: appointment,
-                                  )),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //       builder: (context) =>
+                        //           LightAppointmentsListVoiceCallRingingScreen()),
+                        // );
                       },
                       fontStyle: ButtonFontStyle.SourceSansProSemiBold18,
                       alignment: Alignment.center,

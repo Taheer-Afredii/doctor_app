@@ -19,14 +19,12 @@ class _LightAppointmentsReviewScreenState
   TabController? tabController;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     tabController = tabController = TabController(length: 6, vsync: this);
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     tabController!.dispose();
   }

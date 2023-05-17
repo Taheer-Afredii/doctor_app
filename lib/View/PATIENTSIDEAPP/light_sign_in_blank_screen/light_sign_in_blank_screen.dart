@@ -1,10 +1,4 @@
 import 'package:doctorq/View/PATIENTSIDEAPP/light_sign_up_blank_screen/patient_sign_up_viewmodel.dart';
-import 'package:doctorq/Widget/Patientwidgets/boxshadow.dart';
-import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
-import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
-import 'package:doctorq/Widget/Patientwidgets/custom_checkbox.dart';
-import 'package:doctorq/Widget/Patientwidgets/custom_text_form_field.dart';
-import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/Widget/doctor_widget/appbutton.dart';
 import 'package:doctorq/Widget/doctor_widget/appcontainers.dart';
 import 'package:doctorq/Widget/doctor_widget/apptextfieldwidget.dart';
@@ -14,7 +8,6 @@ import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/View/PatientSideApp/home.dart';
 import 'package:doctorq/View/PatientSideApp/light_forgot_password_method_screen/light_forgot_password_method_screen.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
-import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -35,8 +28,8 @@ class _LightSignInBlankScreenState extends State<LightSignInBlankScreen> {
   @override
   Widget build(BuildContext context) {
     PatientSignInViewModel model = Provider.of<PatientSignInViewModel>(context);
-    bool isDark = Theme.of(context).brightness == Brightness.dark;
-    bool isRtl = false;
+    // bool isDark = Theme.of(context).brightness == Brightness.dark;
+    // bool isRtl = false;
     return Scaffold(
       body: SingleChildScrollView(
         child: SizedBox(

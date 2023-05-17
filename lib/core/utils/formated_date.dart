@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 String formatDate(DateTime date) {
@@ -19,4 +20,17 @@ String formatDate(DateTime date) {
     //format date like this: Monday, June 15, 2020
     return DateFormat.EEEE().add_MMMMd().add_y().format(date);
   }
+}
+
+navigateToScreen(BuildContext context, Widget screen) {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => screen),
+  );
+}
+
+navigateToScreenWithoutBottomNav(BuildContext context, Widget screen) {
+  Navigator.of(context, rootNavigator: true).push(
+    MaterialPageRoute(builder: (context) => screen),
+  );
 }

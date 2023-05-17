@@ -3,7 +3,6 @@ import 'package:doctorq/Widget/doctor_widget/appointmentscreen_container.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 class AppointmentDetailsScreen extends StatelessWidget {
   const AppointmentDetailsScreen({super.key});
@@ -80,7 +79,7 @@ class AppointmentDetailsScreen extends StatelessWidget {
               AppTransparentBackButton(
                 text: "Back",
                 onPressed: () {
-                  Get.back();
+                  Navigator.pop(context);
                 },
               )
             ],

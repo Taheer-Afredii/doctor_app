@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:doctorq/View/PATIENTSIDEAPP/light_profile_settings_screen/change_language.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 

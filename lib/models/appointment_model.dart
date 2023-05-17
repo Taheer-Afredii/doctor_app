@@ -1,7 +1,7 @@
 import 'package:doctorq/core/utils/image_constant.dart';
 import 'package:flutter/material.dart';
 
-class AppointmentModel {
+class MyAppointmentModel {
   String? id;
   String? name;
   String? email;
@@ -15,7 +15,7 @@ class AppointmentModel {
   String? callType;
   IconData? iconData;
 
-  AppointmentModel({
+  MyAppointmentModel({
     this.id,
     this.name,
     this.email,
@@ -43,8 +43,8 @@ class AppointmentModel {
   // }
 }
 
-List<AppointmentModel> appointmentlocalList = [
-  AppointmentModel(
+List<MyAppointmentModel> appointmentlocalList = [
+  MyAppointmentModel(
     id: '1',
     name: 'John Doe',
     email: 'johndoe@example.com',
@@ -58,7 +58,7 @@ List<AppointmentModel> appointmentlocalList = [
     callType: 'Video call',
     iconData: Icons.videocam_sharp,
   ),
-  AppointmentModel(
+  MyAppointmentModel(
     id: '2',
     name: 'Jane Smith',
     email: 'janesmith@example.com',
@@ -72,7 +72,7 @@ List<AppointmentModel> appointmentlocalList = [
     callType: 'voice call',
     iconData: Icons.phone,
   ),
-  AppointmentModel(
+  MyAppointmentModel(
     id: '3',
     name: 'Bob Johnson',
     email: 'bobjohnson@example.com',
@@ -86,7 +86,7 @@ List<AppointmentModel> appointmentlocalList = [
     callType: 'Video call',
     iconData: Icons.videocam_sharp,
   ),
-  AppointmentModel(
+  MyAppointmentModel(
     id: '4',
     name: 'Alice Thompson',
     email: 'alicethompson@example.com',
@@ -100,7 +100,7 @@ List<AppointmentModel> appointmentlocalList = [
     callType: 'voice call',
     iconData: Icons.phone,
   ),
-  AppointmentModel(
+  MyAppointmentModel(
     id: '5',
     name: 'Mark Davis',
     email: 'markdavis@example.com',
@@ -114,7 +114,7 @@ List<AppointmentModel> appointmentlocalList = [
     callType: 'Video call',
     iconData: Icons.videocam_sharp,
   ),
-  AppointmentModel(
+  MyAppointmentModel(
     id: '6',
     name: 'Emily Wilson',
     email: 'emilywilson@example.com',
@@ -128,7 +128,7 @@ List<AppointmentModel> appointmentlocalList = [
     callType: 'voice call',
     iconData: Icons.phone,
   ),
-  AppointmentModel(
+  MyAppointmentModel(
     id: '8',
     name: 'Sara Patel',
     email: 'sarapatel@example.com',
@@ -142,7 +142,7 @@ List<AppointmentModel> appointmentlocalList = [
     callType: 'voice call',
     iconData: Icons.phone,
   ),
-  AppointmentModel(
+  MyAppointmentModel(
     id: '9',
     name: 'Mike Jones',
     email: 'mikejones@example.com',
@@ -156,7 +156,7 @@ List<AppointmentModel> appointmentlocalList = [
     callType: 'Video call',
     iconData: Icons.videocam_sharp,
   ),
-  AppointmentModel(
+  MyAppointmentModel(
     id: '10',
     name: 'Lisa Brown',
     email: 'lisabrown@example.com',

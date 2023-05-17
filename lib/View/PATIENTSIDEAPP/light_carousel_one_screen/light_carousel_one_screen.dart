@@ -19,7 +19,7 @@ class _LightCarouselOneScreenState extends State<LightCarouselOneScreen> {
   @override
   void initState() {
     super.initState();
-    // TODO: implement initState
+
     _pageController = new PageController(initialPage: _currentIndex);
     _pageController!.addListener(() {});
   }

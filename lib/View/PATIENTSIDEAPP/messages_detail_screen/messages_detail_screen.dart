@@ -1,19 +1,17 @@
-import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_list_messaging_ended_screen/light_appointments_list_messaging_ended_screen.dart';
-import 'package:doctorq/View/TestEnumFile.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/data/chat_list.dart';
-import 'package:doctorq/models/appointments_model.dart';
+import 'package:doctorq/models/appointment_model.dart';
 import 'package:doctorq/models/chat_model.dart';
 import 'package:flutter/material.dart';
 import 'widgets/chat_list.dart';
 
 // ignore: must_be_immutable
 class MessagesDetailScreen extends StatefulWidget {
-  AppointmentsModel appointment;
+  MyAppointmentModel appointment;
   MessagesDetailScreen({required this.appointment});
   @override
   State<MessagesDetailScreen> createState() => _MessagesDetailScreenState();
@@ -29,7 +27,7 @@ class _MessagesDetailScreenState extends State<MessagesDetailScreen> {
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-    bool isRtl = false;
+    // bool isRtl = false;
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -52,7 +50,7 @@ class _MessagesDetailScreenState extends State<MessagesDetailScreen> {
                         BkBtn(),
                         HorizontalSpace(width: 20),
                         Text(
-                          widget.appointment.name,
+                          widget.appointment.name!,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.start,
                           style: TextStyle(
@@ -116,7 +114,7 @@ class _MessagesDetailScreenState extends State<MessagesDetailScreen> {
                           ),
                         ),
                         child: CommonImageView(
-                          imagePath: widget.appointment.img,
+                          imagePath: widget.appointment.picture,
                           height: getSize(
                             100.00,
                           ),
@@ -143,7 +141,7 @@ class _MessagesDetailScreenState extends State<MessagesDetailScreen> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
-                                  widget.appointment.name,
+                                  widget.appointment.name!,
                                   overflow: TextOverflow.ellipsis,
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
@@ -159,7 +157,7 @@ class _MessagesDetailScreenState extends State<MessagesDetailScreen> {
                                     top: 3,
                                   ),
                                   child: Text(
-                                    widget.appointment.time,
+                                    widget.appointment.startTime!,
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.start,
                                     style: TextStyle(
@@ -217,11 +215,8 @@ class _MessagesDetailScreenState extends State<MessagesDetailScreen> {
                         fontFamily: 'Source Sans Pro',
                         fontWeight: FontWeight.w400,
                         fontSize: getFontSize(16)),
-                    contentPadding: getPadding(
-                        bottom: 24,
-                        top: 24,
-                        left: isRtl ? 0 : 24,
-                        right: isRtl ? 24 : 0),
+                    contentPadding:
+                        getPadding(bottom: 24, top: 24, left: 24, right: 0),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(
                         getHorizontalSize(
@@ -274,8 +269,7 @@ class _MessagesDetailScreenState extends State<MessagesDetailScreen> {
                         maxHeight: getVerticalSize(36),
                         maxWidth: getHorizontalSize(60)),
                     suffixIcon: Padding(
-                      padding: getPadding(
-                          left: isRtl ? 24 : 0, right: isRtl ? 0 : 24),
+                      padding: getPadding(left: 0, right: 24),
                       child: InkWell(
                           onTap: () {
                             setState(() {
@@ -286,15 +280,14 @@ class _MessagesDetailScreenState extends State<MessagesDetailScreen> {
                               textEditingController.clear();
                             });
                             Future.delayed(Duration(seconds: 7), () {
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        LightAppointmentsListMessagingEndedScreen(
-                                          appointment: widget.appointment,
-                                          callTypes: CallType.message,
-                                        )),
-                              );
+                              // Navigator.pushReplacement(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //       builder: (context) =>
+                              //           LightAppointmentsListMessagingEndedScreen(
+                              //             appointment: widget.appointment,
+                              //           )),
+                              // );
                             });
                           },
                           child: Image.asset(ImageConstant.send)),

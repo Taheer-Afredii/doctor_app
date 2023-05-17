@@ -1,3 +1,4 @@
+import 'package:doctorq/Widget/Patientwidgets/boxshadow.dart';
 import 'package:doctorq/Widget/doctor_widget/appointmentscreen_container.dart';
 import 'package:doctorq/core/constants/doctor_side_styles.dart';
 import 'package:doctorq/core/utils/color_constant.dart';
@@ -35,6 +36,7 @@ class HistoryScreenMainContainer extends StatelessWidget {
           height: 100.h,
           width: double.infinity,
           decoration: BoxDecoration(
+            boxShadow: customBoxShadow,
             color: Colors.white,
             borderRadius: BorderRadius.circular(12.r),
             border: Border.all(color: fromHex("#EBEEF2")),
@@ -103,7 +105,7 @@ class HistoryScreenMainContainer extends StatelessWidget {
                   child: Icon(
                     Icons.arrow_forward_ios,
                     color: blueColor,
-                    size: 24.sp,
+                    size: 16.sp,
                   ),
                 ),
               ),

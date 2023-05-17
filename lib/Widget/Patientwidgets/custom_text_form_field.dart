@@ -211,21 +211,21 @@ class CustomTextFormField extends StatelessWidget {
     }
   }
 
-  _setPadding() {
-    switch (padding) {
-      case TextFormFieldPadding.PaddingAll18:
-        return getPadding(
-          all: 18,
-        );
-      default:
-        return getPadding(
-          left: 15,
-          top: 16,
-          right: 15,
-          bottom: 15,
-        );
-    }
-  }
+  // _setPadding() {
+  //   switch (padding) {
+  //     case TextFormFieldPadding.PaddingAll18:
+  //       return getPadding(
+  //         all: 18,
+  //       );
+  //     default:
+  //       return getPadding(
+  //         left: 15,
+  //         top: 16,
+  //         right: 15,
+  //         bottom: 15,
+  //       );
+  //   }
+  // }
 }
 
 enum TextFormFieldShape {

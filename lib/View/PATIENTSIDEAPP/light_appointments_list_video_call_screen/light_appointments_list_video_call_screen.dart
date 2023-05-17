@@ -1,11 +1,10 @@
-import 'package:doctorq/View/TestEnumFile.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/patient_videoCall%20RingingScreen/patient_video_call_ringing_screen.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_button.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
-import 'package:doctorq/models/appointments_model.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_list_video_call_ringing_screen/light_appointments_list_video_call_ringing_screen.dart';
+import 'package:doctorq/models/appointment_model.dart';
 
 import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_icon_button.dart';
@@ -13,12 +12,12 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class LightAppointmentsListVideoCallScreen extends StatelessWidget {
-  AppointmentsModel appointment;
+  MyAppointmentModel appointment;
   LightAppointmentsListVideoCallScreen({required this.appointment});
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-    bool isRtl = false;
+    // bool isRtl = false;
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -115,7 +114,7 @@ class LightAppointmentsListVideoCallScreen extends StatelessWidget {
                                       ),
                                     ),
                                     child: CommonImageView(
-                                      imagePath: appointment.img,
+                                      imagePath: appointment.picture,
                                       height: getSize(
                                         100.00,
                                       ),
@@ -127,21 +126,18 @@ class LightAppointmentsListVideoCallScreen extends StatelessWidget {
                                   ),
                                 ),
                                 CustomIconButton(
-                                  // isRtl: isRtl,
-                                  height: 36,
-                                  width: 36,
-                                  margin: getMargin(
-                                    left: 10,
-                                    top: 10,
-                                  ),
-                                  variant:
-                                      IconButtonVariant.OutlineIndigoA20014_1,
-                                  shape: IconButtonShape.CustomBorderTL12,
-                                  alignment: Alignment.bottomRight,
-                                  child: Image.asset(
-                                      appointment.contactMethodIcon,
-                                      color: Colors.white),
-                                ),
+                                    // isRtl: isRtl,
+                                    height: 36,
+                                    width: 36,
+                                    margin: getMargin(
+                                      left: 10,
+                                      top: 10,
+                                    ),
+                                    variant:
+                                        IconButtonVariant.OutlineIndigoA20014_1,
+                                    shape: IconButtonShape.CustomBorderTL12,
+                                    alignment: Alignment.bottomRight,
+                                    child: Icon(appointment.iconData))
                               ],
                             ),
                           ),
@@ -163,7 +159,7 @@ class LightAppointmentsListVideoCallScreen extends StatelessWidget {
                                           MainAxisAlignment.start,
                                       children: [
                                         Text(
-                                          appointment.name,
+                                          appointment.name!,
                                           overflow: TextOverflow.ellipsis,
                                           textAlign: TextAlign.start,
                                           style: TextStyle(
@@ -186,15 +182,7 @@ class LightAppointmentsListVideoCallScreen extends StatelessWidget {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Text(
-                                                appointment.contactMethodIcon ==
-                                                        ImageConstant.call
-                                                    ? 'VoiceCall'
-                                                    : appointment
-                                                                .contactMethodIcon ==
-                                                            ImageConstant
-                                                                .videocam
-                                                        ? 'VideoCall'
-                                                        : 'Message',
+                                                'Message',
                                                 overflow: TextOverflow.ellipsis,
                                                 textAlign: TextAlign.start,
                                                 style: TextStyle(
@@ -231,7 +219,7 @@ class LightAppointmentsListVideoCallScreen extends StatelessWidget {
                                                   bottom: 1,
                                                 ),
                                                 child: Text(
-                                                  appointment.status,
+                                                  appointment.status!,
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.start,
@@ -261,7 +249,9 @@ class LightAppointmentsListVideoCallScreen extends StatelessWidget {
                                             top: 3,
                                           ),
                                           child: Text(
-                                            appointment.time,
+                                            appointment.startTime! +
+                                                " - " +
+                                                appointment.endTime!,
                                             overflow: TextOverflow.ellipsis,
                                             textAlign: TextAlign.start,
                                             style: TextStyle(
@@ -277,22 +267,16 @@ class LightAppointmentsListVideoCallScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Container(
-                                    margin: getMargin(
-                                        left: isRtl ? 20 : 0,
-                                        right: isRtl ? 0 : 20),
-                                    padding: getPadding(all: 10),
-                                    height: getVerticalSize(44),
-                                    width: getHorizontalSize(44),
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(12),
-                                      color: ColorConstant.blueA400
-                                          .withOpacity(0.1),
-                                    ),
-                                    child: CommonImageView(
-                                      imagePath: appointment.contactMethodIcon,
-                                      color: ColorConstant.blueA400,
-                                    ),
-                                  ),
+                                      margin: getMargin(left: 0, right: 20),
+                                      padding: getPadding(all: 10),
+                                      height: getVerticalSize(44),
+                                      width: getHorizontalSize(44),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(12),
+                                        color: ColorConstant.blueA400
+                                            .withOpacity(0.1),
+                                      ),
+                                      child: Icon(appointment.iconData)),
                                 ],
                               ),
                             ),
@@ -831,10 +815,7 @@ class LightAppointmentsListVideoCallScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  LightAppointmentsListVideoCallRingingScreen(
-                                    appointment: appointment,
-                                    callTypes: CallType.videoCall,
-                                  )),
+                                  PatientVideoCallRingingScreen()),
                         );
                       },
                       fontStyle: ButtonFontStyle.SourceSansProSemiBold18,

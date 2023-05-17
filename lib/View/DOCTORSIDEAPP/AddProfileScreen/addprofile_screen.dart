@@ -1,5 +1,6 @@
 import 'package:doctorq/View/DOCTORSIDEAPP/AddProfileScreen/addprofile_screen_viewmodel.dart';
 import 'package:doctorq/View/DOCTORSIDEAPP/DateAndTimeSelection/dateandtimeselection_screen.dart';
+import 'package:doctorq/Widget/Patientwidgets/boxshadow.dart';
 import 'package:doctorq/Widget/doctor_widget/appbutton.dart';
 import 'package:doctorq/Widget/doctor_widget/apptextfieldwidget.dart';
 import 'package:doctorq/Widget/doctor_widget/custom_dropdown.dart';
@@ -200,21 +201,13 @@ class UploadPhotoContainer extends StatelessWidget {
       height: 138.h,
       width: 383.w,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: const Color(0xFFFFFFFF),
-        border: Border.all(
-          width: 1,
-          color: const Color(0xFFE5E5E5),
-        ),
-        boxShadow: const [
-          BoxShadow(
-            color: Color.fromARGB(255, 217, 217, 224),
-            offset: Offset(0, 3),
-            spreadRadius: 3,
-            blurRadius: 10,
+          borderRadius: BorderRadius.circular(10),
+          color: const Color(0xFFFFFFFF),
+          border: Border.all(
+            width: 1,
+            color: const Color(0xFFE5E5E5),
           ),
-        ],
-      ),
+          boxShadow: customBoxShadow),
       child: GestureDetector(
         onTap: onpressed,
         child: Column(

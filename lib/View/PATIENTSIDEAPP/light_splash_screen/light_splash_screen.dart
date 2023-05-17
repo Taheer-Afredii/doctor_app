@@ -12,7 +12,7 @@ class LightSplashScreen extends StatefulWidget {
 
 class _LightSplashScreenState extends State<LightSplashScreen> {
   void initState() {
-    // TODO: implement initState
+    //
     super.initState();
     Timer(Duration(seconds: 3), () {
       Navigator.of(context).pushReplacement(

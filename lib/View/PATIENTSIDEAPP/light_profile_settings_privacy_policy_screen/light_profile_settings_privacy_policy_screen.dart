@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class LightProfileSettingsPrivacyPolicyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    // bool isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: SafeArea(
         child: Column(

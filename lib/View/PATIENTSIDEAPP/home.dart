@@ -1,7 +1,7 @@
+import 'package:doctorq/View/PATIENTSIDEAPP/Patient_Appointment_screen/patient_appointment_screen.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/Patient_History_Screen/patient_history_screen.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/Patient_Home_Screen/patient_home_screen.dart';
 import 'package:doctorq/core/app_export.dart';
-import 'package:doctorq/View/PatientSideApp/history_screen/history_screen.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_list_upcoming_tab_container_screen/light_appointments_list_upcoming_tab_container_screen.dart';
-import 'package:doctorq/View/PatientSideApp/light_home_screen/light_home_screen.dart';
 import 'package:doctorq/View/PatientSideApp/light_profile_settings_screen/light_profile_settings_screen.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
@@ -12,9 +12,9 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 class Home extends StatelessWidget {
   List<Widget> _buildScreens() {
     return [
-      LightHomeScreen(),
-      LightAppointmentsListUpcomingTabContainerScreen(),
-      HistoryScreen(),
+      PatientHomeScreen(),
+      PatientAppointmentScreen(),
+      PatientHistoryScreen(),
       LightProfileSettingsScreen(),
     ];
   }

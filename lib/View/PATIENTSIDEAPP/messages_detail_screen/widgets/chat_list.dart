@@ -11,11 +11,11 @@ class ChatListWidget extends StatelessWidget {
 
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-    bool isRtl = false;
+    // bool isRtl = false;
     return Container(
       child: chatList[index].isMine
           ? Align(
-              alignment: isRtl ? Alignment.centerLeft : Alignment.centerRight,
+              alignment: Alignment.centerRight,
               child: Container(
                 width: getHorizontalSize(
                   300.00,
@@ -75,8 +75,7 @@ class ChatListWidget extends StatelessWidget {
                     ),
                     HorizontalSpace(width: 24),
                     Align(
-                      alignment:
-                          isRtl ? Alignment.centerLeft : Alignment.centerRight,
+                      alignment: Alignment.centerRight,
                       child: Text(
                         "8:12 Am",
                         overflow: TextOverflow.ellipsis,
@@ -96,7 +95,7 @@ class ChatListWidget extends StatelessWidget {
               ),
             )
           : Align(
-              alignment: isRtl ? Alignment.centerRight : Alignment.centerLeft,
+              alignment: Alignment.centerLeft,
               child: Container(
                 width: getHorizontalSize(
                   300.00,
@@ -155,8 +154,7 @@ class ChatListWidget extends StatelessWidget {
                       ),
                     ),
                     Align(
-                      alignment:
-                          isRtl ? Alignment.centerRight : Alignment.centerLeft,
+                      alignment: Alignment.centerLeft,
                       child: Text(
                         "8:12 Am",
                         overflow: TextOverflow.ellipsis,

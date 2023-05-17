@@ -4,10 +4,10 @@ import 'package:doctorq/View/DOCTORSIDEAPP/AppointmentScreen/appointment_viewmod
 import 'package:doctorq/Widget/doctor_widget/appointmentscreen_container.dart';
 import 'package:doctorq/Widget/doctor_widget/apptextfieldwidget.dart';
 import 'package:doctorq/core/utils/color_constant.dart';
+import 'package:doctorq/core/utils/formated_date.dart';
 import 'package:doctorq/models/appointment_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 class UpcomingTab extends StatelessWidget {
@@ -85,7 +85,8 @@ class UpcomingTab extends StatelessWidget {
                                 ? blueColor
                                 : greenColor,
                             onTap: () {
-                              Get.to(() => const AppointmentDetailsScreen());
+                              navigateToScreen(
+                                  context, AppointmentDetailsScreen());
                             },
                           ),
                         );

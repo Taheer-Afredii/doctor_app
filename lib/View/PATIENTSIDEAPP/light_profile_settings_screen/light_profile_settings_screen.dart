@@ -19,7 +19,7 @@ class LightProfileSettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-    bool isRtl = false;
+    // bool isRtl = false;
     return Scaffold(
       body: SafeArea(
         child: Column(

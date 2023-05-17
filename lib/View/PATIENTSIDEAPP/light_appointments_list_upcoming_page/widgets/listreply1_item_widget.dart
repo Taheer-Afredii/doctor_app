@@ -1,11 +1,9 @@
+import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_list_voice_call_ringing_screen/light_appointments_list_voice_call_ringing_screen.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/data/appointments_lists.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_list_messaging_screen/light_appointments_list_messaging_screen.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_list_video_call_screen/light_appointments_list_video_call_screen.dart';
-import 'package:doctorq/View/PatientSideApp/light_appointments_list_voice_call_screen/light_appointments_list_voice_call_screen.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +15,7 @@ class Listreply1ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-    bool isRtl = false;
+    // bool isRtl = false;
     return Align(
       alignment: Alignment.center,
       child: InkWell(
@@ -27,21 +25,9 @@ class Listreply1ItemWidget extends StatelessWidget {
           ),
         ),
         onTap: () {
-          if (upcommingList[index].contactMethodIcon == ImageConstant.call)
-            Navigator.of(context, rootNavigator: true).push(MaterialPageRoute(
-                builder: (context) => LightAppointmentsListMessagingScreen(
-                      appointment: upcommingList[index],
-                    )));
-          else if (upcommingList[index].contactMethodIcon ==
-              ImageConstant.videocam)
-            Navigator.of(context, rootNavigator: true).push(MaterialPageRoute(
-                builder: (context) => LightAppointmentsListVideoCallScreen(
-                    appointment: upcommingList[index])));
-          else
-            Navigator.of(context, rootNavigator: true).push(MaterialPageRoute(
-                builder: (context) => LightAppointmentsListVoiceCallScreen(
-                      appointment: upcommingList[index],
-                    )));
+          Navigator.of(context, rootNavigator: true).push(MaterialPageRoute(
+              builder: (context) =>
+                  LightAppointmentsListVoiceCallRingingScreen()));
         },
         child: Container(
           height: getVerticalSize(100),
@@ -78,50 +64,26 @@ class Listreply1ItemWidget extends StatelessWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.only(
-                        topLeft: isRtl
-                            ? Radius.circular(
-                                getHorizontalSize(
-                                  0.00,
-                                ),
-                              )
-                            : Radius.circular(
-                                getHorizontalSize(
-                                  12.00,
-                                ),
-                              ),
-                        bottomLeft: isRtl
-                            ? Radius.circular(
-                                getHorizontalSize(
-                                  0.00,
-                                ),
-                              )
-                            : Radius.circular(
-                                getHorizontalSize(
-                                  12.00,
-                                ),
-                              ),
-                        bottomRight: isRtl
-                            ? Radius.circular(
-                                getHorizontalSize(
-                                  12.00,
-                                ),
-                              )
-                            : Radius.circular(
-                                getHorizontalSize(
-                                  0.00,
-                                ),
-                              ),
-                        topRight: isRtl
-                            ? Radius.circular(
-                                getHorizontalSize(
-                                  12.00,
-                                ),
-                              )
-                            : Radius.circular(
-                                getHorizontalSize(
-                                  0.00,
-                                ),
-                              ),
+                        topLeft: Radius.circular(
+                          getHorizontalSize(
+                            12.00,
+                          ),
+                        ),
+                        bottomLeft: Radius.circular(
+                          getHorizontalSize(
+                            12.00,
+                          ),
+                        ),
+                        bottomRight: Radius.circular(
+                          getHorizontalSize(
+                            0.00,
+                          ),
+                        ),
+                        topRight: Radius.circular(
+                          getHorizontalSize(
+                            0.00,
+                          ),
+                        ),
                       ),
                       child: CommonImageView(
                         imagePath: upcommingList[index].img,
@@ -143,8 +105,7 @@ class Listreply1ItemWidget extends StatelessWidget {
                       ),
                       variant: IconButtonVariant.OutlineIndigoA20014_1,
                       shape: IconButtonShape.CustomBorderTL12,
-                      alignment:
-                          isRtl ? Alignment.bottomLeft : Alignment.bottomRight,
+                      alignment: Alignment.bottomRight,
                       child: Image.asset(upcommingList[index].contactMethodIcon,
                           color: Colors.white),
                     ),
@@ -272,8 +233,7 @@ class Listreply1ItemWidget extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: getMargin(
-                            left: isRtl ? 20 : 0, right: isRtl ? 0 : 20),
+                        margin: getMargin(left: 0, right: 20),
                         padding: getPadding(all: 10),
                         height: getVerticalSize(44),
                         width: getHorizontalSize(44),

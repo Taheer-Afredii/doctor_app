@@ -29,14 +29,14 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
   TextEditingController addressController = TextEditingController(
     text: "New York, USA",
   );
-  String? DOB = "1990-01-01";
+  // String? DOB = "1990-01-01";
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
-    bool isRtl = false;
+    // bool isRtl = false;
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -241,18 +241,18 @@ class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
     );
   }
 
-  DateTime? selectedDate;
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-        context: context,
-        initialDate: DateTime(1997, 1, 1),
-        firstDate: DateTime(1900, 1),
-        lastDate: DateTime.now());
-    if (picked != null && picked != selectedDate) {
-      setState(() {
-        selectedDate = picked;
-        DOB = selectedDate.toString();
-      });
-    }
-  }
+  // DateTime? selectedDate;
+  // Future<void> _selectDate(BuildContext context) async {
+  //   final DateTime? picked = await showDatePicker(
+  //       context: context,
+  //       initialDate: DateTime(1997, 1, 1),
+  //       firstDate: DateTime(1900, 1),
+  //       lastDate: DateTime.now());
+  //   if (picked != null && picked != selectedDate) {
+  //     setState(() {
+  //       selectedDate = picked;
+  //       DOB = selectedDate.toString();
+  //     });
+  //   }
+  // }
 }

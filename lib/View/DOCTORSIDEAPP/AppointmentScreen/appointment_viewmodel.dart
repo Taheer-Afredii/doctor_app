@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 
 class AppointmentViewModel extends ChangeNotifier {
   bool showUpcoming = true;
-  AppointmentModel appointmentModel = AppointmentModel();
+  MyAppointmentModel appointmentModel = MyAppointmentModel();
 
   void toggleShowUpcoming(value) {
     showUpcoming = value;

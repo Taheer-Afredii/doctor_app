@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 Size size = WidgetsBinding.instance.window.physicalSize /
     WidgetsBinding.instance.window.devicePixelRatio;
+
 const num DESIGN_WIDTH = 428;
 const num DESIGN_HEIGHT = 926;
 const num DESIGN_STATUS_BAR = 44;
@@ -37,6 +39,17 @@ double getSize(double px) {
     return height.toInt().toDouble();
   } else {
     return width.toInt().toDouble();
+  }
+}
+
+class Common24VerticalHeight extends StatelessWidget {
+  const Common24VerticalHeight({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(height: 24.h);
   }
 }
 
