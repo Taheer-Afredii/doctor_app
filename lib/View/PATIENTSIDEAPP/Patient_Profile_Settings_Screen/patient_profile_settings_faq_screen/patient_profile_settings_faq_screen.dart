@@ -8,14 +8,14 @@ import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
-class LightProfileSettingsFaqScreen extends StatefulWidget {
+class PatientProfileSettingsFaqScreen extends StatefulWidget {
   @override
-  State<LightProfileSettingsFaqScreen> createState() =>
-      _LightProfileSettingsFaqScreenState();
+  State<PatientProfileSettingsFaqScreen> createState() =>
+      _PatientProfileSettingsFaqScreenState();
 }
 
-class _LightProfileSettingsFaqScreenState
-    extends State<LightProfileSettingsFaqScreen> {
+class _PatientProfileSettingsFaqScreenState
+    extends State<PatientProfileSettingsFaqScreen> {
   bool general = true;
   bool account = false;
   bool doctor = false;

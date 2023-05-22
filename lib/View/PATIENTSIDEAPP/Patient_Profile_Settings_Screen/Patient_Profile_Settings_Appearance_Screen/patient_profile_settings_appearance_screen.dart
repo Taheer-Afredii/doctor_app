@@ -1,20 +1,20 @@
-import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_switch.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
+import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
+import 'package:doctorq/main.dart';
 import 'package:flutter/material.dart';
 
-class LightProfileSettingsSecurityScreen extends StatefulWidget {
+class PatientProfileSettingsAppearanceScreen extends StatefulWidget {
   @override
-  State<LightProfileSettingsSecurityScreen> createState() =>
-      _LightProfileSettingsSecurityScreenState();
+  State<PatientProfileSettingsAppearanceScreen> createState() =>
+      _PatientProfileSettingsAppearanceScreenState();
 }
 
-class _LightProfileSettingsSecurityScreenState
-    extends State<LightProfileSettingsSecurityScreen> {
-  bool switchVal1 = true;
+class _PatientProfileSettingsAppearanceScreenState
+    extends State<PatientProfileSettingsAppearanceScreen> {
   bool switchVal2 = true;
-  bool switchVal3 = false;
+  bool switchVal3 = true;
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
@@ -43,7 +43,7 @@ class _LightProfileSettingsSecurityScreenState
                     BkBtn(),
                     HorizontalSpace(width: 20),
                     Text(
-                      "Security",
+                      "Appearance",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.start,
                       style: TextStyle(
@@ -62,57 +62,51 @@ class _LightProfileSettingsSecurityScreenState
               child: SingleChildScrollView(
                 child: Padding(
                   padding: getPadding(
-                    top: 20,
+                    top: 31,
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            switchVal1 = !switchVal1;
-                          });
-                        },
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Padding(
-                            padding: getPadding(
-                                left: 24, right: 24, top: 10, bottom: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: getPadding(
-                                    top: 8,
-                                    bottom: 7,
-                                  ),
-                                  child: Text(
-                                    "Face ID",
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.start,
-                                    style: TextStyle(
-                                      fontSize: getFontSize(
-                                        16,
-                                      ),
-                                      fontFamily: 'Source Sans Pro',
-                                      fontWeight: FontWeight.w600,
+                      Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: getPadding(
+                            left: 24,
+                            right: 24,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: getPadding(
+                                  top: 8,
+                                  bottom: 7,
+                                ),
+                                child: Text(
+                                  "Dark Mode",
+                                  overflow: TextOverflow.ellipsis,
+                                  textAlign: TextAlign.start,
+                                  style: TextStyle(
+                                    fontSize: getFontSize(
+                                      16,
                                     ),
+                                    fontFamily: 'Source Sans Pro',
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
-                                CustomSwitch(
-                                  value: switchVal1,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      switchVal1 = !switchVal1;
-                                    });
-                                  },
-                                ),
-                              ],
-                            ),
+                              ),
+                              CustomSwitch(
+                                value: themeManager.themeMode == ThemeMode.dark,
+                                onChanged: (value) {
+                                  setState(() {});
+                                  themeManager.toggleTheme(value);
+                                },
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -150,11 +144,11 @@ class _LightProfileSettingsSecurityScreenState
                               children: [
                                 Padding(
                                   padding: getPadding(
-                                    top: 8,
-                                    bottom: 7,
+                                    top: 10,
+                                    bottom: 5,
                                   ),
                                   child: Text(
-                                    "Remember me",
+                                    "Blur Background",
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.start,
                                     style: TextStyle(
@@ -217,7 +211,7 @@ class _LightProfileSettingsSecurityScreenState
                                     bottom: 7,
                                   ),
                                   child: Text(
-                                    "Touch ID",
+                                    "Full Screen Mode",
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.start,
                                     style: TextStyle(

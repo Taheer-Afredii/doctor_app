@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
-class LightProfileSettingsContactUsBlankScreen extends StatelessWidget {
+class PatientProfileSettingsContactUsBlankScreen extends StatelessWidget {
   TextEditingController autoLayoutHorOneController = TextEditingController();
 
   @override

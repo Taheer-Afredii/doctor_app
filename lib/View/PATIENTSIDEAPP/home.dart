@@ -1,8 +1,8 @@
 import 'package:doctorq/View/PATIENTSIDEAPP/Patient_Appointment_screen/patient_appointment_screen.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/Patient_History_Screen/patient_history_screen.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/Patient_Home_Screen/patient_home_screen.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/Patient_Profile_Settings_Screen/patient_profile_settings_screen.dart';
 import 'package:doctorq/core/app_export.dart';
-import 'package:doctorq/View/PatientSideApp/light_profile_settings_screen/light_profile_settings_screen.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
       PatientHomeScreen(),
       PatientAppointmentScreen(),
       PatientHistoryScreen(),
-      LightProfileSettingsScreen(),
+      PatientProfileSettingsScreen(),
     ];
   }
 

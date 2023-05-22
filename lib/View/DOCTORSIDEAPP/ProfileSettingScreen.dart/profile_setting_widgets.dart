@@ -75,6 +75,7 @@ class ProfileSettingScreenIconContainer extends StatelessWidget {
   final double? height;
   final double? width;
   final Color? iconColor;
+  final VoidCallback? onTap;
 
   const ProfileSettingScreenIconContainer({
     super.key,
@@ -83,6 +84,7 @@ class ProfileSettingScreenIconContainer extends StatelessWidget {
     this.height,
     this.width,
     this.iconColor,
+    this.onTap,
   });
 
   @override
@@ -94,10 +96,52 @@ class ProfileSettingScreenIconContainer extends StatelessWidget {
         color: color ?? ColorConstant.blueA40019,
         borderRadius: BorderRadius.circular(12.r),
       ),
-      child: Icon(
-        iconData,
-        color: iconColor ?? blueColor,
-        size: 24.sp,
+      child: GestureDetector(
+        onTap: onTap ?? () {},
+        child: Icon(
+          iconData,
+          color: iconColor ?? blueColor,
+          size: 24.sp,
+        ),
+      ),
+    );
+  }
+}
+
+class ProfileSettingScreenEditProfileIconContainer extends StatelessWidget {
+  final IconData iconData;
+  final Color? color;
+  final double? height;
+  final double? width;
+  final Color? iconColor;
+  final VoidCallback? onTap;
+
+  const ProfileSettingScreenEditProfileIconContainer({
+    super.key,
+    required this.iconData,
+    this.color,
+    this.height,
+    this.width,
+    this.iconColor,
+    this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap ?? () {},
+      child: Container(
+        width: width ?? 56.w,
+        height: height ?? 56.h,
+        decoration: BoxDecoration(
+          color: color ?? ColorConstant.blueA40019,
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        child: Icon(
+          iconData,
+          color: iconColor ?? blueColor,
+          size: 24.sp,
+        ),
       ),
     );
   }

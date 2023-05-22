@@ -1,11 +1,11 @@
+import 'package:doctorq/View/PATIENTSIDEAPP/Patient_Profile_Settings_Screen/patient_profile_settings_invite_friends_screen/widgets/listdarrellsteward_item_widget.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/data/friends_list.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
-import '../light_profile_settings_invite_friends_screen/widgets/listdarrellsteward_item_widget.dart';
 import 'package:flutter/material.dart';
 
-class LightProfileSettingsInviteFriendsScreen extends StatelessWidget {
+class PatientProfileSettingsInviteFriendsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

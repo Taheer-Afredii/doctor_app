@@ -3,7 +3,7 @@ import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
-class LightProfileSettingsPrivacyPolicyScreen extends StatelessWidget {
+class PatientProfileSettingsTermsAndConditionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // bool isDark = Theme.of(context).brightness == Brightness.dark;
@@ -17,30 +17,29 @@ class LightProfileSettingsPrivacyPolicyScreen extends StatelessWidget {
             Container(
               width: size.width,
               margin: getMargin(
-                top: 36,
+                top: 35,
               ),
               child: Padding(
                 padding: getPadding(
                   left: 24,
-                  right: 204,
+                  right: 128,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
+                  mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                        padding: getPadding(
-                          bottom: 3,
-                        ),
-                        child: BkBtn()),
-                    Padding(
                       padding: getPadding(
-                        left: 20,
-                        bottom: 8,
+                        top: 1,
+                        bottom: 1,
                       ),
+                      child: BkBtn(),
+                    ),
+                    Padding(
+                      padding: getPadding(left: 20, bottom: 5),
                       child: Text(
-                        "Privacy Policy",
+                        "Terms and Condition",
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.start,
                         style: TextStyle(
@@ -60,7 +59,7 @@ class LightProfileSettingsPrivacyPolicyScreen extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Padding(
                   padding: getPadding(
-                    top: 38,
+                    top: 41,
                   ),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -69,14 +68,14 @@ class LightProfileSettingsPrivacyPolicyScreen extends StatelessWidget {
                     children: [
                       Container(
                         width: getHorizontalSize(
-                          380.00,
+                          374.00,
                         ),
                         margin: getMargin(
                           left: 24,
                           right: 24,
                         ),
                         child: Text(
-                          "Odio eu feugiat pretium nibh ipsum consequat nisl. Tempus quam pellentesque nec nam aliquam sem et tortor consequat. Elit eget gravida cum sociis natoque penatibus. Sed elementum tempus egestas sed sed risus. Id interdum velit laoreet id donec ultrices. Fermentum leo vel orci porta non pulvinar neque laoreet. In mollis nunc sed id semper risus in hendrerit gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Erat nam at lectus urna duis convallis convallis. Interdum velit laoreet id donec ultrices tincidunt arcu. Sit amet venenatis urna cursus eget nunc scelerisque viverra. Purus in massa tempor nec feugiat. Hendrerit gravida rutrum quisque non tellus orci ac auctor augue. Aenean vel elit scelerisque mauris pellentesque.\n\nOdio eu feugiat pretium nibh ipsum consequat nisl. Tempus quam pellentesque nec nam aliquam sem et tortor consequat. Elit eget gravida cum sociis natoque penatibus. Sed elementum tempus egestas sed sed risus. Id interdum velit laoreet id donec ultrices. Fermentum leo vel orci porta non pulvinar neque laoreet. In mollis nunc sed id semper risus in hendrerit gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Erat nam at lectus urna duis convallis convallis. Interdum velit laoreet id donec ultrices tincidunt arcu.",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Urna id volutpat lacus laoreet non curabitur gravida arcu. Amet nisl purus in mollis nunc sed id. Elementum curabitur vitae nunc sed. A pellentesque sit amet porttitor eget. Ac turpis egestas integer eget aliquet nibh. Nibh praesent tristique magna sit amet purus gravida. Sagittis nisl rhoncus mattis rhoncus urna neque viverra. Volutpat sed cras ornare arcu dui vivamus arcu felis bibendum.\n\nSagittis vitae et leo duis ut diam. Et pharetra pharetra massa massa. Faucibus et molestie ac feugiat. Ac feugiat sed lectus vestibulum. Sagittis eu volutpat odio facilisis. Venenatis urna cursus eget nunc scelerisque viverra mauris. Facilisi cras fermentum odio eu feugiat pretium nibh ipsum consequat. Etiam tempor orci eu lobortis elementum nibh. Quis auctor elit sed vulputate mi sit. Quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse. Lorem sed risus ultricies tristique nulla aliquet enim tortor. Condimentum mattis pellentesque id nibh tortor id.",
                           maxLines: null,
                           textAlign: TextAlign.start,
                           style: TextStyle(

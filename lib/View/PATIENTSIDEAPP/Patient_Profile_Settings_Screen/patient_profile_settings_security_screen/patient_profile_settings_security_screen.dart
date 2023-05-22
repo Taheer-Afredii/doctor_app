@@ -1,17 +1,20 @@
-import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
-import 'package:doctorq/core/app_export.dart';
-import 'package:doctorq/View/PatientSideApp/light_profile_settings_privacy_policy_screen/light_profile_settings_privacy_policy_screen.dart';
 import 'package:doctorq/Widget/Patientwidgets/bkBtn.dart';
+import 'package:doctorq/Widget/Patientwidgets/custom_switch.dart';
+import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
-import '../light_profile_settings_contact_us_blank_screen/light_profile_settings_contact_us_blank_screen.dart';
-import '../light_profile_settings_terms_and_condition_screen/light_profile_settings_terms_and_condition_screen.dart';
+class PatientProfileSettingsSecurityScreen extends StatefulWidget {
+  @override
+  State<PatientProfileSettingsSecurityScreen> createState() =>
+      _PatientProfileSettingsSecurityScreenState();
+}
 
-// ignore: must_be_immutable
-class LightProfileSettingsHelpScreen extends StatelessWidget {
-  bool checkbox = false;
-
+class _PatientProfileSettingsSecurityScreenState
+    extends State<PatientProfileSettingsSecurityScreen> {
+  bool switchVal1 = true;
+  bool switchVal2 = true;
+  bool switchVal3 = false;
   @override
   Widget build(BuildContext context) {
     bool isDark = Theme.of(context).brightness == Brightness.dark;
@@ -40,7 +43,7 @@ class LightProfileSettingsHelpScreen extends StatelessWidget {
                     BkBtn(),
                     HorizontalSpace(width: 20),
                     Text(
-                      "Help",
+                      "Security",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.start,
                       style: TextStyle(
@@ -66,95 +69,29 @@ class LightProfileSettingsHelpScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      // InkWell(
-                      //   onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //       builder: (context) =>
-                      //           LightProfileSettingsFaqScreen()),
-                      // );
-                      //   },
-                      //   child: Align(
-                      //     alignment: Alignment.center,
-                      //     child: Padding(
-                      //       padding: getPadding(
-                      //           left: 24, right: 24, bottom: 10, top: 10),
-                      //       child: Row(
-                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //         crossAxisAlignment: CrossAxisAlignment.end,
-                      //         mainAxisSize: MainAxisSize.max,
-                      //         children: [
-                      //           Padding(
-                      //             padding: getPadding(
-                      //               top: 6,
-                      //               bottom: 1,
-                      //             ),
-                      //             child: Text(
-                      //               "FAQ",
-                      //               overflow: TextOverflow.ellipsis,
-                      //               textAlign: TextAlign.start,
-                      //               style: TextStyle(
-                      //                 fontSize: getFontSize(
-                      //                   16,
-                      //                 ),
-                      //                 fontFamily: 'Source Sans Pro',
-                      //                 fontWeight: FontWeight.w600,
-                      //               ),
-                      //             ),
-                      //           ),
-                      //           Icon(
-                      //             Icons.arrow_forward_ios_rounded,
-                      //             color: ColorConstant.blueA400,
-                      //             size: getSize(20),
-                      //           )
-                      //         ],
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                      // Container(
-                      //   height: getVerticalSize(
-                      //     1.00,
-                      //   ),
-                      //   margin: getMargin(
-                      //     left: 24,
-                      //     top: 10,
-                      //     bottom: 10,
-                      //     right: 24,
-                      //   ),
-                      //   child: CustomDivider(isDark: isDark),
-                      // ),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    LightProfileSettingsContactUsBlankScreen()),
-                          );
+                          setState(() {
+                            switchVal1 = !switchVal1;
+                          });
                         },
                         child: Align(
                           alignment: Alignment.center,
                           child: Padding(
                             padding: getPadding(
-                              left: 24,
-                              top: 10,
-                              bottom: 10,
-                              right: 24,
-                            ),
+                                left: 24, right: 24, top: 10, bottom: 10),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
                                   padding: getPadding(
-                                    top: 4,
-                                    bottom: 3,
+                                    top: 8,
+                                    bottom: 7,
                                   ),
                                   child: Text(
-                                    "Contact us",
+                                    "Face ID",
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.start,
                                     style: TextStyle(
@@ -166,76 +103,14 @@ class LightProfileSettingsHelpScreen extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                Icon(
-                                  Icons.arrow_forward_ios_rounded,
-                                  color: ColorConstant.blueA400,
-                                  size: getSize(20),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Container(
-                        height: getVerticalSize(
-                          1.00,
-                        ),
-                        width: getHorizontalSize(
-                          380.00,
-                        ),
-                        margin: getMargin(
-                          left: 24,
-                          top: 10,
-                          bottom: 10,
-                          right: 24,
-                        ),
-                        child: CustomDivider(isDark: isDark),
-                      ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      LightProfileSettingsTermsAndConditionScreen()));
-                        },
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Padding(
-                            padding: getPadding(
-                              left: 24,
-                              top: 10,
-                              bottom: 10,
-                              right: 24,
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: getPadding(
-                                    top: 5,
-                                    bottom: 2,
-                                  ),
-                                  child: Text(
-                                    "Terms & Conditions",
-                                    overflow: TextOverflow.ellipsis,
-                                    textAlign: TextAlign.start,
-                                    style: TextStyle(
-                                      fontSize: getFontSize(
-                                        16,
-                                      ),
-                                      fontFamily: 'Source Sans Pro',
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
+                                CustomSwitch(
+                                  value: switchVal1,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      switchVal1 = !switchVal1;
+                                    });
+                                  },
                                 ),
-                                Icon(
-                                  Icons.arrow_forward_ios_rounded,
-                                  color: ColorConstant.blueA400,
-                                  size: getSize(20),
-                                )
                               ],
                             ),
                           ),
@@ -253,13 +128,11 @@ class LightProfileSettingsHelpScreen extends StatelessWidget {
                         ),
                         child: CustomDivider(isDark: isDark),
                       ),
-                      GestureDetector(
+                      InkWell(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      LightProfileSettingsPrivacyPolicyScreen()));
+                          setState(() {
+                            switchVal2 = !switchVal2;
+                          });
                         },
                         child: Align(
                           alignment: Alignment.center,
@@ -272,16 +145,16 @@ class LightProfileSettingsHelpScreen extends StatelessWidget {
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
                                   padding: getPadding(
-                                    top: 5,
-                                    bottom: 2,
+                                    top: 8,
+                                    bottom: 7,
                                   ),
                                   child: Text(
-                                    "Privay Policy",
+                                    "Remember me",
                                     overflow: TextOverflow.ellipsis,
                                     textAlign: TextAlign.start,
                                     style: TextStyle(
@@ -293,11 +166,77 @@ class LightProfileSettingsHelpScreen extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                Icon(
-                                  Icons.arrow_forward_ios_rounded,
-                                  color: ColorConstant.blueA400,
-                                  size: getSize(20),
-                                )
+                                CustomSwitch(
+                                  value: switchVal2,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      switchVal2 = !switchVal2;
+                                    });
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: getVerticalSize(
+                          1.00,
+                        ),
+                        margin: getMargin(
+                          left: 24,
+                          top: 10,
+                          bottom: 10,
+                          right: 24,
+                        ),
+                        child: CustomDivider(isDark: isDark),
+                      ),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            switchVal3 = !switchVal3;
+                          });
+                        },
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Padding(
+                            padding: getPadding(
+                              left: 24,
+                              top: 10,
+                              bottom: 10,
+                              right: 24,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: getPadding(
+                                    top: 8,
+                                    bottom: 7,
+                                  ),
+                                  child: Text(
+                                    "Touch ID",
+                                    overflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.start,
+                                    style: TextStyle(
+                                      fontSize: getFontSize(
+                                        16,
+                                      ),
+                                      fontFamily: 'Source Sans Pro',
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ),
+                                CustomSwitch(
+                                  value: switchVal3,
+                                  onChanged: (value) {
+                                    setState(() {
+                                      switchVal3 = !switchVal3;
+                                    });
+                                  },
+                                ),
                               ],
                             ),
                           ),

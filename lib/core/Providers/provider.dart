@@ -14,6 +14,7 @@ import 'package:doctorq/View/DOCTORSIDEAPP/SignupScreen/signupscreen_viewmodel.d
 import 'package:doctorq/View/PATIENTSIDEAPP/PatientAppointment_TimeSelection/patient_appointments_time_selection_viewmodel.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/Patient_Appointment_screen/patient_appointment_viewmodel.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/Patient_History_Screen/patient_history_screen_viewmodel.dart';
+import 'package:doctorq/View/PATIENTSIDEAPP/Patient_Profile_Settings_Screen/patient_profile_screen_viewmodel.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/light_appointments_list_upcoming_page/doctor_appoint_viewmodel.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/light_home_favorite_doctor_screen/favourite_doctor_viewmodel.dart';
 import 'package:doctorq/View/PATIENTSIDEAPP/light_profile_blank_screen/patient_profile_blank_viewmodel.dart';
@@ -51,4 +52,6 @@ List<SingleChildWidget> providers = [
       create: (_) => PatientAppointmentTimeSelectionViewModel()),
   ChangeNotifierProvider(create: (_) => PatientAppointmentViewmodel()),
   ChangeNotifierProvider(create: (_) => PatientHistoryScreenViewModel()),
+  ChangeNotifierProvider(
+      create: (_) => PatientProfileSettingsScreenViewModel()),
 ];

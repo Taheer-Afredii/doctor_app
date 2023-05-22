@@ -12,12 +12,14 @@ import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class UpdateProfileScreen extends StatefulWidget {
+class PatientUpdateProfileScreen extends StatefulWidget {
   @override
-  State<UpdateProfileScreen> createState() => _UpdateProfileScreenState();
+  State<PatientUpdateProfileScreen> createState() =>
+      _PatientUpdateProfileScreenState();
 }
 
-class _UpdateProfileScreenState extends State<UpdateProfileScreen> {
+class _PatientUpdateProfileScreenState
+    extends State<PatientUpdateProfileScreen> {
   List<String> dropdownItemList = ["Male", "Female"];
   Object? dropDownVal;
   TextEditingController nameController = TextEditingController(

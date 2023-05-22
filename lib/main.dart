@@ -33,8 +33,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-// TODO: implement initState
-
     themeManager.addListener(themeListener);
 
     super.initState();
@@ -42,8 +40,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void dispose() {
-// TODO: implement dispose
-
     themeManager.removeListener(themeListener);
 
     super.dispose();

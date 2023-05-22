@@ -7,7 +7,7 @@ import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class LightProfileSettingsContactUsFilledScreen extends StatelessWidget {
+class PatientProfileSettingsContactUsFilledScreen extends StatelessWidget {
   TextEditingController autoLayoutHorOneController = TextEditingController();
 
   @override

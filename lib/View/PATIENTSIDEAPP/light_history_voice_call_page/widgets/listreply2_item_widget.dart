@@ -1,9 +1,9 @@
+import 'package:doctorq/View/PATIENTSIDEAPP/Patient_History_Screen/patient_history_voice_call_details_screen/patient_history_voice_call_details_screen.dart';
 import 'package:doctorq/Widget/Patientwidgets/common_image_view.dart';
 import 'package:doctorq/Widget/Patientwidgets/spacing.dart';
 import 'package:doctorq/core/app_export.dart';
 import 'package:doctorq/core/utils/size_utils.dart';
 import 'package:doctorq/data/doctors_list.dart';
-import 'package:doctorq/View/PatientSideApp/light_history_voice_call_details_screen/light_history_voice_call_details_screen.dart';
 import 'package:doctorq/Widget/Patientwidgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
 
@@ -27,9 +27,7 @@ class Listreply2ItemWidget extends StatelessWidget {
         onTap: () {
           Navigator.of(context, rootNavigator: true).push(
             MaterialPageRoute(
-                builder: (context) => LightHistoryVoiceCallDetailsScreen(
-                      doctor: doctorList[index],
-                    )),
+                builder: (context) => PatientHistoryVoiceCallDetailsScreen()),
           );
         },
         child: Container(
